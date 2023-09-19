@@ -54,8 +54,8 @@
                            <li class="nav-item">
                               <a class="nav-link" th:href="@{/products}">Our Products</a>
                            </li>
-                           <li class="nav-item">
-                              <a class="nav-link" th:href="@{/about}">About</a>
+                           <li class="nav-item active">
+                              <a class="nav-link " th:href="@{/about}">About</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" th:href="@{/impressum}">Impressum</a>
@@ -69,7 +69,7 @@
                            <li class="nav-item d_none login_btn">
                               <a class="nav-link" href="#">Login</a>
                            </li>
-                           <li class="nav-item d_none active">
+                           <li class="nav-item d_none">
                               <a class="nav-link" th:href="@{/cart}"><img src="images/cart.svg"></a>
                            </li>
                         </ul>
@@ -85,107 +85,7 @@
 
    <!-- body -->
    <body class="main-layout">
-
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
-      <!-- end loader -->
-      
-      <!-- banner -->
-      <section class="banner_main">
-         <div id="banner1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#banner1" data-slide-to="0" class="active"></li>
-               <li data-target="#banner1" data-slide-to="1"></li>
-               <li data-target="#banner1" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Welcome<br></span>to TimeSaverGoods!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Never Run Out Again!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Beauty Delivered to Your Door!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </a>
-            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </a>
-         </div>
-      </section>
-      <!-- end banner -->
-
-      <!-- Start Table -->
-      <div class="container mt-5">
-         <table class="table">
-             <thead>
-                 <tr>
-                     <th>Product</th>
-                     <th>Quantity</th>
-                     <th>Price</th>
-                     <th>Total</th>
-                     <th></th>
-                 </tr>
-             </thead>
-             <tbody>
-                 <tr th:each="cartItems:${cartItems}">
-                    <input type="hidden" th:value="${cartItems.cartItem.cartItemId}" name="id"/>
-                    <input type="hidden" th:value="${cartItems.cartItem.name}" name="name"/>
-                     <td><p th:text="${cartItems.cartItem.name}"></p></td>
-                     <td><p th:text="${cartItems.cartItem.quantity}"></p></td>
-                     <td><p th:text="${cartItems.cartItem.salesPrice}"></p></td>
-                     <td>                                 
-                        <form th:action="@{/updateCartItem}" th:object="${cartItems}" method="POST">
-                           <input type="hidden" th:value="${cartItems.cartItem.cartItemId}" name="id"/>
-                           <input style="width:50px; margin-left: 10px;"  type="number" name="quantity" placeholder="0" th:value="${cartItems.cartItem.quantity}"/>    
-                           <button type="submit" class="btn btn-primary" ><img src="images/check.svg"></button>
-                        </form>
-                     </td>
-                     <td>
-                        <a th:href="@{/removeFromCart/{id} (id=${cartItems.cartItem.cartItemId})}"><img src="images/trash.svg"></a>   
-                     </td>
-                  </tr>
-
-             </tbody>
-         </table>
-         <div class="text-right">
-             <h3>Gesamt: 84,95 €</h3>
-         </div>
-         <div class="text-center mt-4">
-            <a th:href="@{/checkout}"><button class="read_more">Start Checkout</button></a>
-            <a th:href="@{/cart/delete}"><button class="read_more">Delete Cart</button></a>
-         </div>
-     </div>
-     <!-- End Table -->
+        <h1>Oh no... Something went wrong!</h1>
    </body>
    <!-- end Body  -->
    
