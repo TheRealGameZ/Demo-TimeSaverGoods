@@ -10,6 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.models.ProductRequest.ProductsPage.Products;
 import com.example.demo.service.CartService;
 import com.example.demo.service.ProductRequestService;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+
+import com.example.demo.models.Address;
+import com.example.demo.models.PaymentMethod;
+import com.example.demo.models.Transformers;
+import com.example.demo.service.OrderService;
+
 
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -112,7 +120,7 @@ public class HomeController
           return "redirect:/cart";
      }
 
-     //----------------------------- CART -----------------------------//
+     //----------------------------- Datenschutz -----------------------------//
 
 
      @GetMapping("/datenschutz")
@@ -131,4 +139,63 @@ public class HomeController
 
 
       //----------------------------- Checkout -----------------------------//
+
+      private Address addressSafe;
+    
+    public void setAddressSafe(Address addressSafe) {
+        this.addressSafe = addressSafe;
+    }
+
+    public Address getAddressSafe() {
+        return addressSafe;
+    }
+    
+    //Set CheckoutSession & @Returns Address-Input
+    @GetMapping("/checkout")
+    public String startCheckout(Model model)
+    {
+        //TODO: Check if Cart is empty -> Error
+        OrderService.setCheckout();
+        model.addAttribute("Address", new Address());
+        return "checkout";
+    }
+
+    //Get Address, Set it in the Order, @Return Payment-Input
+    @PostMapping("/placeOrder")
+    public String checkout(@ModelAttribute("Address") Address address, Model model) 
+    {
+        OrderService.setAddress(Transformers.transformAddress(address));
+        setAddressSafe(address);
+
+        model.addAttribute("PaymentMethod", new PaymentMethod());
+        model.addAttribute("Address", address);
+        return "paymentinfo";
+    }
+
+    @PostMapping("/setBilling")
+    public void setBilling(@ModelAttribute("Address") Address address, BindingResult bindingResult) 
+    {
+        //TODO: Check if Valid
+        setAddressSafe(address);
+    }
+  
+    //SetPayment & place Order
+    @PostMapping("/payment")
+    public String setPayment(@ModelAttribute("PaymentMethod") PaymentMethod paymentMethod, BindingResult bindingResult) 
+    {
+        OrderService.setPayment(Transformers.transformPayment(paymentMethod, addressSafe));
+            
+        OrderService.setOrder();
+        
+       return "redirect:/home";
+    }
+
+    //Cancel CheckoutSession
+    @GetMapping("/cancelCheckout")
+    public String cancelCheckout()
+    {
+        OrderService.cancelCheckout();
+        return "redirect:/cart";
+    }
+
 }
