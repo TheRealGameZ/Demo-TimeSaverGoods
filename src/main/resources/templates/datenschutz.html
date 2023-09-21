@@ -26,7 +26,16 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
-      <!-- header -->
+
+   <style>
+      /* Benutzerdefiniertes CSS, um den Body zu zentrieren */
+      body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+  </style>
+
    <header>
       <!-- header inner -->
       <div class="header">
@@ -67,7 +76,7 @@
                               <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
                            </li>
                            <li class="nav-item d_none login_btn">
-                              <a class="nav-link" href="#">Login</a>
+                              <a class="nav-link" th:href="@{/login}">Login</a>
                            </li>
                            <li class="nav-item d_none">
                               <a class="nav-link" th:href="@{/cart}"><img src="images/cart.svg"></a>
@@ -80,97 +89,53 @@
          </div>
       </div>
    </header>
-   <!-- end header inner -->
-   <!-- end header -->
 
-   <!-- body -->
    <body class="main-layout">
       <section class="banner_main">
-         <div id="banner1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#banner1" data-slide-to="0" class="active"></li>
-               <li data-target="#banner1" data-slide-to="1"></li>
-               <li data-target="#banner1" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Welcome<br></span>to TimeSaverGoods!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Never Run Out Again!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Beauty Delivered to Your Door!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <p>Hier muss noch was hin</p>
                </div>
             </div>
-            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </a>
-            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </a>
          </div>
       </section>
-   </body>
-   <!-- end Body  -->
-   
-   <!--  footer -->
-    <footer>
-        <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <ul class="location_icon">
-                    <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
-                    <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
-                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                     <p>© 2023 All Rights Reserved. Design by TimeSaverGoods</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
-</html>
 
+      <div class="container">
+         <h1>Datenschutz</h1>
+      </div>
+
+   </body>
+
+   <footer>
+      <div class="footer">
+      <div class="container">
+         <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <ul class="location_icon">
+                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
+                  <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
+                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                  </ul>
+               </div>
+         </div>
+      </div>
+      <div class="copyright">
+         <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                  <p>© 2023 All Rights Reserved. Design by TimeSaverGoods</a></p>
+                  </div>
+               </div>
+         </div>
+      </div>
+      </div>
+   </footer>
+
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+</html>

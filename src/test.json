@@ -1,0 +1,187 @@
+[
+    {
+        "id": "01t68000000XcxPAAS",
+        "name": "Gentle Foaming Facial Cleanser",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Cleanse away impurities with our foaming facial cleanser. It\u0026#39;s gentle on the skin and leaves it feeling refreshed."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxQAAS",
+        "name": "Luxurious Lavender Body Lotion",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Indulge in the calming scent of lavender with our rich body lotion. It moisturizes and soothes your skin."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxVAAS",
+        "name": "Natural Mineral Sunscreen SPF 30",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Protect your skin from the sun\u0026#39;s harmful rays with our mineral sunscreen. It\u0026#39;s safe, non-greasy, and suitable for all skin types."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxdAAC",
+        "name": "Long-Lasting Matte Lipstick",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Achieve the perfect pout with our matte lipstick collection. It offers vibrant color and stays put all day."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxTAAS",
+        "name": "Natural Hair Conditioner with Argan Oil",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Nourish your hair with our argan oil conditioner. It leaves your locks silky, smooth, and manageable."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxUAAS",
+        "name": "Mineral-Infused Setting Spray",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Keep your makeup in place all day with our mineral-infused setting spray. It provides a matte finish and long-lasting wear."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxJAAS",
+        "name": "Anti-Aging Retinol Night Cream",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Turn back the clock with our retinol night cream. It reduces fine lines and promotes youthful-looking skin."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxKAAS",
+        "name": "Volumizing Mascara for Bold Lashes",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Achieve dramatic lashes with our volumizing mascara. It adds length and fullness for a striking look."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxYAAS",
+        "name": "Hydrating Vitamin C Face Serum",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Rejuvenate your skin with our vitamin C serum. It hydrates, brightens, and promotes a healthy complexion."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000XcxOAAS",
+        "name": "Soothing Cucumber \u0026amp; Aloe Facial Mask",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {
+                "value": "Pamper your skin with our cucumber and aloe facial mask. It calms, hydrates, and refreshes your complexion."
+            }
+        },
+        "productClass": "Simple"
+    },
+    {
+        "id": "01t68000000WsdHAAS",
+        "name": "Shipping Charge for this delivery method",
+        "defaultImage": {
+            "alternateText": "",
+            "mediaType": "Image",
+            "sortOrder": 0,
+            "title": "image",
+            "url": "/img/b2b/default-product-image.svg"
+        },
+        "fields": {
+            "Description": {}
+        },
+        "productClass": "Simple"
+    }
+]

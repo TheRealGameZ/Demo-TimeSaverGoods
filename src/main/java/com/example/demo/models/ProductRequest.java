@@ -1,123 +1,53 @@
 package com.example.demo.models;
 
-public class ProductRequest 
-{
+import java.util.List;
 
-    private ProductsPage productsPage;
-
-    public ProductsPage getProductsPage() {
-        return productsPage;
+public class ProductRequest {
+    public class Product {
+        public String id;
+        public String name;
+        public DefaultImage defaultImage;
+        public Fields fields;
+        public String productClass;
+        public String purchaseQuantityRule;
+        public Object variationAttributeSet;
+        public Prices prices;
     }
 
-    public void setProductsPage(ProductsPage productsPage) {
-        this.productsPage = productsPage;
+    public class DefaultImage {
+        public String alternateText;
+        public Object contentVersionId;
+        public Object id;
+        public String mediaType;
+        public int sortOrder;
+        public Object thumbnailUrl;
+        public String title;
+        public String url;
     }
 
-    public class ProductsPage 
-    {
-        private String total;
-        private Products[] products;
-        
-        public String getTotal() {
-            return total;
-        }
-
-        public void setTotal(String total) {
-            this.total = total;
-        }
-
-        public Products[] getProducts() {
-            return products;
-        }
-
-        public void setProducts(Products[] products) {
-            this.products = products;
-        }
-
-        public class Products 
-        {
-            private DefaultImage defaultImage;
-            public String id;
-            private String name;
-            public String quantity;
-            public Prices prices;
-
-
-            public Prices getPrices() {
-                return prices;
-            }
-
-            public void setPrices(Prices prices) {
-                this.prices = prices;
-            }
-
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
-            public DefaultImage getDefaultImage() {
-                return defaultImage;
-            }
-
-            public void setDefaultImage(DefaultImage defaultImage) {
-                this.defaultImage = defaultImage;
-            }
-
-            public String getId() {
-                return id;
-            }
-
-            public void setId(String id) {
-                this.id = id;
-            }
-
-            public class DefaultImage
-            {
-                private String url = "tree-736885__480.jpg";
-
-                public String getUrl() {
-                    return url;
-                }
-
-                public void setUrl(String url) {
-                    this.url = url;
-                }
-            }
-                
-            public class Prices
-            {
-                public String listPrice;
-                public String pricebookEntryId;
-                public String unitPrice;
-                
-                public String getPricebookEntryId() {
-                    return pricebookEntryId;
-                }
-                public void setPricebookEntryId(String pricebookEntryId) {
-                    this.pricebookEntryId = pricebookEntryId;
-                }
-                public String getListPrice() {
-                    return listPrice;
-                }
-                public void setListPrice(String listPrice) {
-                    this.listPrice = listPrice;
-                }
-                
-                public String getUnitPrice() {
-                    return unitPrice;
-                }
-                public void setUnitPrice(String unitPrice) {
-                    this.unitPrice = unitPrice;
-                }
-                
-            }    
-        }
+    public class Fields {
+        public Description Description;
     }
-} 
-    
 
+    public class Description {
+        public String value;
+    }
 
+    public class Prices {
+        public Object error;
+        public Object listPrice;
+        public String pricebookEntryId;
+        public String productId;
+        public boolean success;
+        public String unitPrice;
+    }
+
+    public class ProductsPage {
+        public String currencyIsoCode;
+        public int pageSize;
+        public List<Product> products;
+        public int total;
+    }
+
+    public ProductsPage productsPage;
+}

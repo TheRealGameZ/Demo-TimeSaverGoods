@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
 import com.example.demo.models.ProductRequest;
-import com.example.demo.models.ProductRequest.ProductsPage.Products;
+import com.example.demo.models.ProductRequest.Product;
 import com.google.gson.Gson;
 
 
@@ -19,11 +19,12 @@ import com.google.gson.Gson;
 public class ProductRequestService 
 {
     
-    public static List<Products> getAllProducts()
+    public static List<Product> getAllProducts()
     {
         Gson gson = new Gson();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("categoryId", "0ZG68000000LRpYGAW");
+        jsonObject.put("includePrices", "true");
 
         ResponseEntity<String> response = SalesforceService.salesforceApiCall("/search/product-search", jsonObject.toString(), HttpMethod.POST);
        
@@ -34,21 +35,19 @@ public class ProductRequestService
         else
         {
             ProductRequest request = gson.fromJson(response.getBody(),ProductRequest.class);
-            List<Products> mylist = Arrays.asList(request.getProductsPage().getProducts());
-
-            return mylist;
+            return request.productsPage.products;
         }
     }
 
-    public static List<Products> getSomeProducts()
+    public static List<Product> getSomeProducts()
     {
-        List<Products> products = ProductRequestService.getAllProducts();
+        List<Product> products = ProductRequestService.getAllProducts();
 
         return products.subList(0, 8);
 
     }
 
-    public static Products getProductByID(String id)
+    public static Product getProductByID(String id)
     {
         Gson gson = new Gson();
         ResponseEntity<String> response = SalesforceService.salesforceApiCall("/products/"+id, "", HttpMethod.GET);
@@ -59,7 +58,7 @@ public class ProductRequestService
         }
         else
         {
-            return gson.fromJson(response.getBody(),Products.class);
+            return gson.fromJson(response.getBody(),Product.class);
         }
     }
 

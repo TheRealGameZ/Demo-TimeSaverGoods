@@ -9,7 +9,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import com.example.demo.models.Cart;
 import com.example.demo.models.Cart.CartItems;
 import com.example.demo.models.Cart.CartItems.CartItem;
-import com.example.demo.models.ProductRequest.ProductsPage.Products;
+import com.example.demo.models.ProductRequest.Product;
 import com.google.gson.Gson;
 
 @Service
@@ -64,10 +64,10 @@ public class CartService
         else return gson.fromJson(response.getBody(),Cart.class);
     }
 
-    public static void addCartItem(Products records, String quantity)
+    public static void addCartItem(Product records, String quantity)
     {
         JSONObject body = new JSONObject();
-        body.put("productId", records.getId());
+        body.put("productId", records.id);
         body.put("quantity", quantity);
         body.put("type", "Product");
             

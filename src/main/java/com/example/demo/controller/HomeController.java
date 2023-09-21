@@ -7,16 +7,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.models.ProductRequest.ProductsPage.Products;
 import com.example.demo.service.CartService;
 import com.example.demo.service.ProductRequestService;
-import org.springframework.stereotype.Controller;
+import com.google.gson.Gson;
+
 import org.springframework.validation.BindingResult;
 
 import com.example.demo.models.Address;
 import com.example.demo.models.PaymentMethod;
 import com.example.demo.models.Transformers;
 import com.example.demo.service.OrderService;
+import com.example.demo.models.ProductRequest.Product;
 
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -30,16 +31,35 @@ public class HomeController
      public String index(Model model, HttpServletResponse response) 
      {
           model.addAttribute("allProductList", ProductRequestService.getSomeProducts());
-          return "home";
+          return "/home";
      }
-     
 
+     @GetMapping("/test")
+    public String test(Model model) {
+          Gson gson = new Gson();
+          String json = gson.toJson(ProductRequestService.getAllProducts());
+          model.addAttribute("jsonData", json);
+
+          return "test";
+    }
+     
      @PostMapping("/")
-     public String redirectToProductDetail(@ModelAttribute("product") Products product, @RequestParam("quantity") String quantity)
+     public String redirectToProductDetail(@ModelAttribute("product") Product product, @RequestParam("quantity") String quantity)
      {
           return "/products";
      }
 
+     @GetMapping("/login")
+     public String login() 
+     {
+          return "/login";
+     }
+
+      @GetMapping("/register")
+     public String register() 
+     {
+          return "/register";
+     }
 
      //----------------------------- PRODUCTS -----------------------------//
 
@@ -53,7 +73,7 @@ public class HomeController
 
      //Add to Cart
      @PostMapping("/products")
-     public String addToCart(@ModelAttribute("product") Products product, @RequestParam("quantity") String quantity)
+     public String addToCart(@ModelAttribute("product") Product product, @RequestParam("quantity") String quantity)
      {
           CartService.addCartItem(product, quantity);
           return "redirect:/products";
@@ -61,9 +81,9 @@ public class HomeController
 
      //Go to Detailpage
      @GetMapping("/products/{id}")
-     public String viewProductDetail(Model model, HttpServletResponse response) 
+     public String viewProductDetail(@PathVariable String id, Model model, HttpServletResponse response) 
      {
-          
+          model.addAttribute("product", ProductRequestService.getProductByID(id));
           return "productDetail";
      }
 

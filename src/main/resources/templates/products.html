@@ -26,7 +26,16 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
-      <!-- header -->
+
+   <style>
+      /* Benutzerdefiniertes CSS, um den Body zu zentrieren */
+      body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+  </style>
+
    <header>
       <!-- header inner -->
       <div class="header">
@@ -67,7 +76,7 @@
                               <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
                            </li>
                            <li class="nav-item d_none login_btn">
-                              <a class="nav-link" href="#">Login</a>
+                              <a class="nav-link" th:href="@{/login}">Login</a>
                            </li>
                            <li class="nav-item d_none">
                               <a class="nav-link" th:href="@{/cart}"><img src="images/cart.svg"></a>
@@ -80,128 +89,73 @@
          </div>
       </div>
    </header>
-   <!-- end header inner -->
-   <!-- end header -->
 
-   <!-- body -->
    <body class="main-layout">
-
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
-      <!-- end loader -->
-      
-      <!-- banner -->
       <section class="banner_main">
-         <div id="banner1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#banner1" data-slide-to="0" class="active"></li>
-               <li data-target="#banner1" data-slide-to="1"></li>
-               <li data-target="#banner1" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Welcome<br></span>to TimeSaverGoods!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Never Run Out Again!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="text-bg">
-                           <h1> <span class="blu">Beauty Delivered to Your Door!</h1>
-                           <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
-                        </div>
-                     </div>
-                  </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <p>Hier muss noch was hin</p>
                </div>
             </div>
-            <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </a>
-            <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </a>
          </div>
       </section>
-      <!-- end banner -->
 
-      <!-- Our  Glasses section -->
-      <div class="glasses">
-         <div class="container-fluid">
+         <div class="container-fluid" style="margin-top: 50px;">
             <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" th:each="product : ${allProductList}">
-                  <div class="glasses_box">
-                     <form th:action="@{/products}" th:object="${product}" method="POST">
-                        <figure><img src="images/glass1.png" alt="#"/></figure>
-                        <h3><span class="blu">$</span>50</h3>
-                        <input type="hidden" th:value="${product.id}" name="id"/>
-                        <p th:text="${product.name}"></p>
-                        <button type="submit" >Add to cart</button>
-                        <input style="width:50px; margin-left: 10px;" type="number" name="quantity" placeholder="0" min="1"/>
-                     </form>   
-                  </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" th:each="product : ${allProductList}" style="height: 42rem;">
+                  <a th:href="@{/products/{id}(id=${product.id})}">
+                     <div class="card" style="width: 20rem;">
+                        <form th:action="@{/products}" th:object="${product}" method="POST">
+                           <img src="images/placeholder.jpg" class="card-img-top" alt="...">
+                           <div class="card-body" style="height: 12rem;">
+                              <h5 class="card-title" th:text="${product.name}"></h5>
+                              <p class="card-text" th:text="${product.fields.Description.value}"></p>
+                           </div>
+                              <ul class="list-group list-group-flush" style="text-align: center;">
+                                 <li class="list-group-item" th:text="${product.prices.unitPrice}"></li>
+                                 <li class="list-group-item"><input style="width:50px; margin-left: 10px;" type="number" name="quantity" placeholder="0" min="1"/></li>
+                              </ul>
+                           <div class="card-body">
+                              <button style="margin: 0 auto;" class="nav-link" type="submit" >zum Warenkorb hinzufügen</button>
+                           </div>
+                        </form>
+                     </div>
+                  </a>
                </div>
             </div>
          </div>
+   </body>
+
+   <footer>
+      <div class="footer">
+      <div class="container">
+         <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <ul class="location_icon">
+                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
+                  <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
+                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                  </ul>
+               </div>
+         </div>
       </div>
-      <!-- end Our  Glasses section -->
+      <div class="copyright">
+         <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                  <p>© 2023 All Rights Reserved. Design by TimeSaverGoods</a></p>
+                  </div>
+               </div>
+         </div>
+      </div>
+      </div>
+   </footer>
 
-   </body>
-   <!-- end Body  -->
-   
-   <!--  footer -->
-    <footer>
-        <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <ul class="location_icon">
-                    <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
-                    <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
-                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                     <p>© 2023 All Rights Reserved. Design by TimeSaverGoods</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
 </html>
-
