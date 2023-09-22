@@ -19,7 +19,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="images/favicon.ico" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
@@ -65,13 +65,13 @@
                     <div class="collapse navbar-collapse" id="navbarsExample04">
                        <ul class="navbar-nav mr-auto">
                           <li class="nav-item">
-                             <a class="nav-link" th:href="@{/}">Home</a>
+                             <a class="nav-link" th:href="@{/}">Startseite</a>
                           </li>
                           <li class="nav-item">
-                             <a class="nav-link" th:href="@{/products}">Our Products</a>
+                             <a class="nav-link" th:href="@{/products}">Produkte</a>
                           </li>
                           <li class="nav-item">
-                             <a class="nav-link" th:href="@{/about}">About</a>
+                             <a class="nav-link" th:href="@{/about}">Über uns</a>
                           </li>
                           <li class="nav-item">
                              <a class="nav-link" th:href="@{/impressum}">Impressum</a>
@@ -118,7 +118,7 @@
              <div class="row">
                   <form th:action="@{/placeOrder}" th:object="${Address}" method="post" class="main_form">
                     <div class="col-md-12 text-center">
-                      <h2>Bestell Details</h3>
+                      <h2>Bestelldetails</h3>
                     </div>
                     <div class="col-md-12">
                       <input class="contactus" placeholder="Name" type="type" name="Name" id="name" th:field="*{name}" required> 
@@ -157,9 +157,9 @@
           <div class="row">
              <div class="col-md-8 offset-md-2">
                 <ul class="location_icon">
-                   <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
-                   <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
-                   <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                   <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
+                   <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
+                   <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
                 </ul>
              </div>
           </div>
@@ -168,7 +168,7 @@
           <div class="container">
              <div class="row">
                 <div class="col-md-12">
-                   <p>© 2023 All Rights Reserved. Design by TimeSaverGoods</a></p>
+                   <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
                 </div>
              </div>
           </div>

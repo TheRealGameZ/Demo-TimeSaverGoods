@@ -19,7 +19,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="images/favicon.ico" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
@@ -49,13 +49,13 @@
                      <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav mr-auto">
                            <li class="nav-item active">
-                              <a class="nav-link" th:href="@{/}">Home</a>
+                              <a class="nav-link" th:href="@{/}">Startseite</a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" th:href="@{/products}">Our Products</a>
+                              <a class="nav-link" th:href="@{/products}">Produkte</a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" th:href="@{/about}">About</a>
+                              <a class="nav-link" th:href="@{/about}">Über uns</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" th:href="@{/impressum}">Impressum</a>
@@ -105,7 +105,7 @@
                   <div class="container">
                      <div class="carousel-caption">
                         <div class="text-bg">
-                           <h1> <span class="blu">Welcome<br></span>to TimeSaverGoods!</h1>
+                           <h1> <span class="blu">Herzlich Willkommen<br></span>bei TimeSaverGoods!</h1>
                            <figure><img src="images/placeholder.jpg" alt="#"/></figure>
                         </div>
                      </div>
@@ -117,7 +117,7 @@
                         <div class="text-bg">
                            <h1> <span class="blu">Never Run Out Again!</h1>
                            <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
+                           <a class="read_more" href="#">Jetzt einkaufen</a>
                         </div>
                      </div>
                   </div>
@@ -126,9 +126,9 @@
                   <div class="container">
                      <div class="carousel-caption">
                         <div class="text-bg">
-                           <h1> <span class="blu">Beauty Delivered to Your Door!</h1>
+                           <h1> <span class="blu">Schönheit bis zur Haustür geliefert</h1>
                            <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                           <a class="read_more" href="#">Shop Now</a>
+                           <a class="read_more" href="#">Jetzt einkaufen</a>
                         </div>
                      </div>
                   </div>
@@ -155,10 +155,10 @@
                </div>
                <div class="col-md-7">
                   <div class="titlepage">
-                     <h2>About Our Shop</h2>
-                     <p>At TimeSaverGoods, we're passionate about simplifying your life. Our shop is dedicated to providing you with high-quality household essentials and cosmetics through our convenient subscription model. With a commitment to customization and top-notch service, we're here to make your daily routines a breeze. Welcome to a new way of shopping.</p>
+                     <h2>Über diesen Shop</h2>
+                     <p>Bei TimeSaverGoods liegt es uns am Herzen, Ihr Leben zu vereinfachen. Unser Shop ist bestrebt, Sie über unser praktisches Abonnementmodell mit hochwertigen Haushaltsartikeln und Kosmetika zu versorgen. Mit unserem Engagement für individuelle Anpassung und erstklassigem Service sind wir hier, um Ihre täglichen Routinen zum Kinderspiel zu machen. Willkommen bei einer neuen Art des Einkaufens.</p>
                   </div>
-                  <a class="read_more" th:href="@{/about}">Read More</a>
+                  <a class="read_more" th:href="@{/about}">Mehr erfahren</a>
                </div>
             </div>
          </div>
@@ -171,8 +171,8 @@
             <div class="row">
                <div class="col-md-10 offset-md-1">
                   <div class="titlepage">
-                     <h2>Our Products</h2>
-                     <p>Discover a curated selection of premium household essentials and cosmetics at TimeSaverGoods. Our products are carefully chosen to meet your daily needs with quality and convenience in mind. From everyday household items to beauty must-haves, we've got you covered. Explore our range and elevate your daily routine with products you can trust.</p>
+                     <h2>Unsere Produkte</h2>
+                     <p>Entdecken Sie bei TimeSaverGoods eine kuratierte Auswahl an erstklassigen Haushaltsartikeln und Kosmetika. Unsere Produkte werden sorgfältig ausgewählt, um Ihre täglichen Bedürfnisse unter Berücksichtigung von Qualität und Komfort zu erfüllen. Von alltäglichen Haushaltsgegenständen bis hin zu Beauty-Must-Haves – bei uns sind Sie an der richtigen Adresse. Entdecken Sie unser Sortiment und verbessern Sie Ihren Alltag mit Produkten, denen Sie vertrauen können.</p>
                   </div>
                </div>
             </div>
@@ -186,7 +186,7 @@
                         <h3><span class="blu">$</span>50</h3>
                         <input type="hidden" th:value="${product.id}" name="id"/>
                         <p th:text="${product.name}"></p>
-                        <button type="submit" class="read_more">Read More</button>
+                        <button type="submit" class="read_more">Mehr erfahren</button>
                      </form>   
                   </div>
                </div>
@@ -207,9 +207,9 @@
                <div class="col-md-7 padding_right0">
                   <div class="max_width">
                      <div class="titlepage">
-                        <h2>Subscription Simplified</h2>
-                        <p>Say goodbye to the hassle of shopping for everyday items. With our FMCD subscription model, you can customize your deliveries and enjoy the products you love without lifting a finger.</p>
-                        <a class="read_more" th:href="@{/products}">Shop Now</a>
+                        <h2>Einfaches Abonnement</h2>
+                        <p>Verabschieden Sie sich vom lästigen Einkauf von Alltagsgegenständen. Mit unserem FMCD-Abonnementmodell können Sie Ihre Lieferungen individuell anpassen und die Produkte genießen, die Sie lieben, ohne einen Finger zu rühren.</p>
+                        <a class="read_more" th:href="@{/products}">Jetzt einkaufen</a>
                      </div>
                   </div>
                </div>
@@ -224,8 +224,8 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>What say our clients</h2>
-                     <p>Our customers' feedback speaks volumes about the quality of our service. We take pride in the positive reviews and experiences shared by our valued patrons. It's their satisfaction that drives us to continually improve and deliver the best. Thank you for choosing us and for being an integral part of our journey.</p>
+                     <h2>Was unsere Kunden denken</h2>
+                     <p>Das Feedback unserer Kunden sagt Bände über die Qualität unserer Dienstleistung. Wir sind stolz auf die positiven Bewertungen und Erfahrungen unserer geschätzten Kunden. Es ist ihre Zufriedenheit, die uns dazu antreibt, uns kontinuierlich zu verbessern und das Beste zu liefern. Vielen Dank, dass Sie sich für uns entschieden haben und ein wesentlicher Bestandteil unserer Reise sind.</p>
                   </div>
                </div>
             </div>
@@ -246,7 +246,7 @@
                                        <div class="clients_box">
                                           <figure><img src="images/bewertung2.jpg" alt="#"/></figure>
                                           <h3>Sarah Fischer</h3>
-                                          <p>I love how TimeSaverGoods has simplified my life. With their subscription service, I never run out of my favorite cosmetics, and the quality of their products is top-notch.</p>
+                                          <p>Ich liebe es, wie TimeSaverGoods mein Leben vereinfacht hat. Mit ihrem Abo-Service gehen mir meine Lieblingskosmetik nie aus und die Qualität ihrer Produkte ist erstklassig.</p>
                                        </div>
                                     </div>
                                  </div>
@@ -261,7 +261,7 @@
                                        <div class="clients_box">
                                           <figure><img src="images/bewertung1.jpg" alt="#"/></figure>
                                           <h3>John Breitheim</h3>
-                                          <p>A fantastic concept! The ability to customize my deliveries to match my ever-changing needs is a game-changer. Plus, their customer service is incredibly responsive.</p>
+                                          <p>Ein fantastisches Konzept! Die Möglichkeit, meine Lieferungen an meine sich ständig ändernden Bedürfnisse anzupassen, ist bahnbrechend. Außerdem ist ihr Kundenservice unglaublich reaktionsschnell.</p>
                                        </div>
                                     </div>
                                  </div>
@@ -276,7 +276,7 @@
                                        <div class="clients_box">
                                           <figure><img src="images/bewertung3.jpg" alt="#"/></figure>
                                           <h3>Emma Heimland</h3>
-                                          <p>I'm a busy professional, and TimeSaverGoods has made shopping for household items a breeze. Their website is user-friendly, and the products always arrive on time and in perfect condition.</p>
+                                          <p>Ich bin beruflich vielbeschäftigt und TimeSaverGoods hat den Einkauf von Haushaltsgegenständen zum Kinderspiel gemacht. Ihre Website ist benutzerfreundlich und die Produkte kommen immer pünktlich und in einwandfreiem Zustand an.</p>
                                        </div>
                                     </div>
                                  </div>
@@ -305,22 +305,22 @@
                   <form id="request" class="main_form">
                      <div class="row">
                         <div class="col-md-12 ">
-                           <h3>Contact Us</h3>
+                           <h3>Kontaktieren Sie uns!</h3>
                         </div>
                         <div class="col-md-12 ">
                            <input class="contactus" placeholder="Name" type="type" name="Name"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number"> 
+                           <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number"> 
                         </div>
                         <div class="col-md-12">
                            <input class="contactus" placeholder="Email" type="type" name="Email">                          
                         </div>
                         <div class="col-md-12">
-                           <input class="contactusmess" placeholder="Message" type="type" Message="Name">
+                           <input class="contactusmess" placeholder="Nachricht" type="type" Message="Name">
                         </div>
                         <div class="col-md-12">
-                           <button class="send_btn">Send</button>
+                           <button class="send_btn">Abschicken</button>
                         </div>
                      </div>
                   </form>
@@ -338,9 +338,9 @@
                <div class="row">
                   <div class="col-md-8 offset-md-2">
                      <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
-                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
                      </ul>
                   </div>
                </div>
@@ -349,7 +349,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2023 All Rights Reserved. Design by TimeSaverGoods</a></p>
+                        <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
                      </div>
                   </div>
                </div>
