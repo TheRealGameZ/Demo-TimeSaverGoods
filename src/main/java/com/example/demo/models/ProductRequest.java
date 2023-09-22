@@ -12,6 +12,14 @@ public class ProductRequest {
         public String purchaseQuantityRule;
         public Object variationAttributeSet;
         public Prices prices;
+
+        public String getId() {
+            return this.id;
+        }
+    
+        public void setId(String id) {
+            this.id = id;
+        }
     }
 
     public class DefaultImage {

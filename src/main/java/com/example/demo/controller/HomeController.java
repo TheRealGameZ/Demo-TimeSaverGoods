@@ -75,6 +75,8 @@ public class HomeController
      @PostMapping("/products")
      public String addToCart(@ModelAttribute("product") Product product, @RequestParam("quantity") String quantity)
      {
+          System.out.println(product.id);
+          System.out.println(quantity);
           CartService.addCartItem(product, quantity);
           return "redirect:/products";
      }
