@@ -1,4 +1,6 @@
 package com.example.demo.controller;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,7 +69,15 @@ public class HomeController
      @GetMapping("/products")
      public String viewHomePage(Model model, HttpServletResponse response) 
      {
-          model.addAttribute("allProductList", ProductRequestService.getAllProducts());
+          List<Product> products = ProductRequestService.getAllProducts();
+          
+          for (Product product : products) {
+               String prodUrl = product.defaultImage.url;
+               product.defaultImage.url = "https://resilient-bear-3oxray-dev-ed.trailblaze.lightning.force.com/"+prodUrl;
+          }
+
+          model.addAttribute("allProductList", products);
+
           return "products";
      }
 
@@ -75,8 +85,6 @@ public class HomeController
      @PostMapping("/products")
      public String addToCart(@ModelAttribute("product") Product product, @RequestParam("quantity") String quantity)
      {
-          System.out.println(product.id);
-          System.out.println(quantity);
           CartService.addCartItem(product, quantity);
           return "redirect:/products";
      }
