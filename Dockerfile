@@ -1,14 +1,13 @@
-# Fetching latest version of Java
+
+FROM maven AS build
+COPY src /home/app/src
+COPY pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean package
+
+#
+# Package stage
+#
 FROM openjdk:20
- 
-# Setting up work directory
-WORKDIR /app
-
-# Copy the jar file into our app
-COPY ./target/demo-0.0.1-SNAPSHOT.jar /app
-
-# Exposing port 8080
+COPY --from=build /home/app/target/demo-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
 EXPOSE 8080
-
-# Starting the application
-CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar"]
