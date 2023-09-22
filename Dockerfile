@@ -1,6 +1,6 @@
 
 FROM maven AS build
-COPY . /home/app/src
+COPY . /home/app/
 RUN mvn -f /home/app/pom.xml clean package
 
 #
