@@ -44,12 +44,6 @@ public class HomeController
 
           return "test";
     }
-     
-     @PostMapping("/")
-     public String redirectToProductDetail(@ModelAttribute("product") Product product, @RequestParam("quantity") String quantity)
-     {
-          return "/products";
-     }
 
      @GetMapping("/login")
      public String login() 

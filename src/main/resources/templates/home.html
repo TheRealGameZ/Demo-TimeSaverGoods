@@ -26,7 +26,16 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
-      <!-- header -->
+
+   <style>
+      body {
+          display: flex;
+          flex-direction: column;
+          min-height: 380vh;
+      }
+
+  </style>
+
    <header>
       <!-- header inner -->
       <div class="header">
@@ -80,19 +89,13 @@
          </div>
       </div>
    </header>
-   <!-- end header inner -->
-   <!-- end header -->
 
-   <!-- body -->
    <body class="main-layout">
-      <!-- loader  -->
+
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
       </div>
-      <!-- end loader -->
 
-      
-      <!-- banner -->
       <section class="banner_main">
          <div id="banner1" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -142,15 +145,13 @@
             </a>
          </div>
       </section>
-      <!-- end banner -->
 
-      <!-- about section -->
       <div class="about">
          <div class="container">
             <div class="row d_flex">
                <div class="col-md-5">
                   <div class="about_img">
-                     <figure><img src="images/placeholder.jpg" alt="#"/></figure>
+                     <figure><img src="images/home1.jpg" alt="#"/></figure>
                   </div>
                </div>
                <div class="col-md-7">
@@ -163,9 +164,7 @@
             </div>
          </div>
       </div>
-      <!-- about section -->
 
-      <!-- Our  Glasses section -->
       <div class="glasses">
          <div class="container">
             <div class="row">
@@ -180,45 +179,34 @@
          <div class="container-fluid">
             <div class="row">
                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" th:each="product : ${allProductList}">
-                  <div class="glasses_box">
-                     <form th:action="@{/}" th:object="${product}" method="POST">
-                        <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                        <h3><span class="blu">$</span>50</h3>
-                        <input type="hidden" th:value="${product.id}" name="id"/>
-                        <p th:text="${product.name}"></p>
-                        <button type="submit" class="read_more">Mehr erfahren</button>
-                     </form>   
-                  </div>
+                  <figure><img src="images/lol.jpg" alt="#"/></figure>
+                  <input type="hidden" th:value="${product.id}" name="id"/>
+                  <p th:text="${product.name}"></p>
+                  <a th:href="@{/products/{id}(id=${product.id})}"><button type="submit" class="read_more">Mehr erfahren</button></a>
                </div>
             </div>
          </div>
       </div>
-      <!-- end Our  Glasses section -->
 
-      <!-- Our shop section -->
       <div id="about" class="shop">
          <div class="container-fluid">
-            <div class="row">
-               <div class="col-md-5">
-                  <div  class="shop_img">
-                     <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-7 padding_right0">
-                  <div class="max_width">
-                     <div class="titlepage">
-                        <h2>Einfaches Abonnement</h2>
-                        <p>Verabschieden Sie sich vom lästigen Einkauf von Alltagsgegenständen. Mit unserem FMCD-Abonnementmodell können Sie Ihre Lieferungen individuell anpassen und die Produkte genießen, die Sie lieben, ohne einen Finger zu rühren.</p>
-                        <a class="read_more" th:href="@{/products}">Jetzt einkaufen</a>
+             <div class="row">
+                 <div class="col-md-5">
+                     <img src="images/home2.jpg" alt="#" style="height:100%;">
+                 </div>
+                 <div class="col-md-7 padding_right0">
+                     <div class="max_width">
+                         <div class="titlepage">
+                             <h2>Einfaches Abonnement</h2>
+                             <p>Verabschieden Sie sich vom lästigen Einkauf von Alltagsgegenständen. Mit unserem FMCD-Abonnementmodell können Sie Ihre Lieferungen individuell anpassen und die Produkte genießen, die Sie lieben, ohne einen Finger zu rühren.</p>
+                             <a class="read_more" th:href="@{/products}">Jetzt einkaufen</a>
+                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
+                 </div>
+             </div>
          </div>
-      </div>
-      <!-- end Our shop section -->
+     </div>
 
-      <!-- clients section -->
       <div class="clients">
          <div class="container">
             <div class="row">
@@ -244,7 +232,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="clients_box">
-                                          <figure><img src="images/bewertung2.jpg" alt="#"/></figure>
+                                          <figure><img src="images/placeholder.jpg" alt="#"/></figure>
                                           <h3>Sarah Fischer</h3>
                                           <p>Ich liebe es, wie TimeSaverGoods mein Leben vereinfacht hat. Mit ihrem Abo-Service gehen mir meine Lieblingskosmetik nie aus und die Qualität ihrer Produkte ist erstklassig.</p>
                                        </div>
@@ -259,7 +247,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="clients_box">
-                                          <figure><img src="images/bewertung1.jpg" alt="#"/></figure>
+                                          <figure><img src="images/placeholder.jpg" alt="#"/></figure>
                                           <h3>John Breitheim</h3>
                                           <p>Ein fantastisches Konzept! Die Möglichkeit, meine Lieferungen an meine sich ständig ändernden Bedürfnisse anzupassen, ist bahnbrechend. Außerdem ist ihr Kundenservice unglaublich reaktionsschnell.</p>
                                        </div>
@@ -274,7 +262,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="clients_box">
-                                          <figure><img src="images/bewertung3.jpg" alt="#"/></figure>
+                                          <figure><img src="images/placeholder.jpg" alt="#"/></figure>
                                           <h3>Emma Heimland</h3>
                                           <p>Ich bin beruflich vielbeschäftigt und TimeSaverGoods hat den Einkauf von Haushaltsgegenständen zum Kinderspiel gemacht. Ihre Website ist benutzerfreundlich und die Produkte kommen immer pünktlich und in einwandfreiem Zustand an.</p>
                                        </div>
@@ -295,76 +283,67 @@
             </div>
          </div>
       </div>
-      <!-- end clients section -->
 
-      <!-- contact section -->
-      <div id="contact" class="contact">
+      <div class="container-lg" style="width:50%; margin: 30px auto;">
+         <div class="row">
+            <div class="col-md-6 offset-md-3">
+               <form id="request" class="main_form">
+                  <div class="row">
+                     <div class="col-md-12 contactustitle">
+                        <h3>Kontaktieren Sie uns!</h3>
+                     </div>
+                     <div class="col-md-12 ">
+                        <input class="contactus" placeholder="Name" type="type" name="Name"> 
+                     </div>
+                     <div class="col-md-12">
+                        <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number"> 
+                     </div>
+                     <div class="col-md-12">
+                        <input class="contactus" placeholder="Email" type="type" name="Email">                          
+                     </div>
+                     <div class="col-md-12">
+                        <input class="contactusmess" placeholder="Nachricht" type="type" Message="Name">
+                     </div>
+                     <div class="col-md-12">
+                        <button class="send_btn">Abschicken</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
+</body>
+
+<footer class="mt-auto">
+   <div class="footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-8 offset-md-2">
+               <ul class="location_icon">
+                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>TSG GmbH<br>Weg der Freundschaft 4<br>D-07546 Gera</li>
+                  <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 15723228432<br><br><br></li>
+                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@tsg.com<br><br><br></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="copyright">
          <div class="container">
             <div class="row">
-               <div class="col-md-6">
-                  <form id="request" class="main_form">
-                     <div class="row">
-                        <div class="col-md-12 ">
-                           <h3>Kontaktieren Sie uns!</h3>
-                        </div>
-                        <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Name" type="type" name="Name"> 
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number"> 
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Email" type="type" name="Email">                          
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactusmess" placeholder="Nachricht" type="type" Message="Name">
-                        </div>
-                        <div class="col-md-12">
-                           <button class="send_btn">Abschicken</button>
-                        </div>
-                     </div>
-                  </form>
+               <div class="col-md-12">
+                  <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
                </div>
             </div>
          </div>
       </div>
-      </div>
-      <!-- end contact section -->
-
-      <!--  footer -->
-      <footer>
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-8 offset-md-2">
-                     <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
-                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
+   </div>
+</footer>
+      
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
 </html>
-

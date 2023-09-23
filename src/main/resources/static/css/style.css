@@ -688,6 +688,16 @@ button {
 
 .contact {
      margin-top: 90px;
+     position: absolute;
+}
+
+.contactustitle h3{
+     color: #2a2a2c;
+     font-size: 26px;
+     line-height: 30px;
+     padding-top: 23px;
+     font-weight: 600;
+     margin-bottom: 30px;
 }
 
 .contact .main_form h3 {

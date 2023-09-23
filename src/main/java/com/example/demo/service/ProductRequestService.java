@@ -43,7 +43,7 @@ public class ProductRequestService
     {
         List<Product> products = ProductRequestService.getAllProducts();
 
-        return products.subList(0, 8);
+        return products.subList(0, 4);
 
     }
 
