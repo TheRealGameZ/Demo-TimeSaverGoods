@@ -77,9 +77,9 @@ public class HomeController
 
      //Add to Cart
      @PostMapping("/products")
-     public String addToCart(@ModelAttribute("product") Product product, @RequestParam("quantity") String quantity)
+     public String addToCart(@ModelAttribute("product") Product product)
      {
-          CartService.addCartItem(product, quantity);
+          CartService.addCartItem(product, "1");
           return "redirect:/products";
      }
 

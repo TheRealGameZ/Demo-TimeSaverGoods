@@ -37,7 +37,6 @@
   </style>
 
    <header>
-      <!-- header inner -->
       <div class="header">
          <div class="container-fluid">
             <div class="row">
@@ -101,60 +100,82 @@
          </div>
       </section>
 
-         <div class="container-fluid" style="margin-top: 50px;">
-            <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" th:each="product : ${allProductList}" style="height: 42rem;">
-                     <div class="card" style="width: 20rem;">
-                        <form th:action="@{/products}" th:object="${product}" method="POST">
-                           <input type="hidden" th:value="${product.id}" name="id"/>
-                           <a th:href="@{/products/{id}(id=${product.id})}"><img th:src="${product.defaultImage.url}" class="card-img-top" alt="..."></a>
-                           <div class="card-body" style="height: 12rem;">
-                              <h5 class="card-title" th:text="${product.name}"></h5>
-                              <p class="card-text" th:text="${product.fields.Description.value}"></p>
-                           </div>
-                              <ul class="list-group list-group-flush" style="text-align: center;">
-                                 <li class="list-group-item" th:text="${product.prices.unitPrice}"></li>
-                                 <li class="list-group-item"><input style="width:50px; margin-left: 10px;" type="number" name="quantity" placeholder="0" min="1"/></li>
-                              </ul>
-                           <div class="card-body">
-                              <button style="margin: 0 auto;" class="nav-link" type="submit" >zum Warenkorb hinzufügen</button>
-                           </div>
-                        </form>
+   <div class="wrapperFlexContainer">
+   <div class="wrapper" th:each="product : ${allProductList}">
+      <form th:action="@{/products}" th:object="${product}" method="POST" class="product-form">
+         <input type="hidden" th:value="${product.id}" name="id"/>
+         <div class="product-img">
+            <a th:href="@{/products/{id}(id=${product.id})}"><img th:src="${product.defaultImage.url}" height="420" width="327"></a>
+         </div>
+      
+         <div class="product-info">
+            <div class="product-text">
+               <h3 th:text="${product.name}"></h3>
+            </div>
+            <div class="product-price-btn">
+               <p th:text="${product.prices.unitPrice} + ' €'"></p>
+               <button class="add-to-cart">
+                  <div class="default">Add to cart</div>
+                  <div class="success">Added</div>
+                  <div class="cart">
+                     <div>
+                        <div></div>
+                        <div></div>
                      </div>
+                  </div>
+                  <div class="dots"></div>
+               </button>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script>
+         document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+               button.addEventListener('click', e => {
+                  e.preventDefault();
+                  const form = button.closest('.product-form');
+                  button.classList.add('added');
+                  setTimeout(function() {
+                     button.classList.remove('added');
+                     form.submit();
+                  }, 2000);
+               });
+            });
+         });
+      </script>
+   </body>
+
+   <footer class="mt-auto">
+      <div class="footer">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <ul class="location_icon">
+                     <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>TSG GmbH<br>Weg der Freundschaft 4<br>D-07546 Gera</li>
+                     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 15723228432<br><br><br></li>
+                     <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@tsg.com<br><br><br></li>
+                  </ul>
                </div>
             </div>
          </div>
-   </body>
-
-   <footer>
-      <div class="footer">
-      <div class="container">
-         <div class="row">
-               <div class="col-md-8 offset-md-2">
-                  <ul class="location_icon">
-                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
-                  <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
-                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
-                  </ul>
-               </div>
-         </div>
-      </div>
-      <div class="copyright">
-         <div class="container">
+         <div class="copyright">
+            <div class="container">
                <div class="row">
                   <div class="col-md-12">
-                  <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
+                     <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
                   </div>
                </div>
+            </div>
          </div>
       </div>
-      </div>
    </footer>
-
-   <script src="js/jquery.min.js"></script>
-   <script src="js/popper.min.js"></script>
-   <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="js/jquery-3.0.0.min.js"></script>
-   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="js/custom.js"></script>
 </html>
