@@ -34,6 +34,13 @@
           flex-direction: column;
           min-height: 100vh;
       }
+
+      input[type=number]::-webkit-inner-spin-button, 
+         input[type=number]::-webkit-outer-spin-button {  
+
+            opacity: 1;
+
+         }
   </style>
 
    <header>
@@ -121,8 +128,8 @@
                     <td>                                 
                        <form th:action="@{/updateCartItem}" th:object="${cartItems}" method="POST">
                           <input type="hidden" th:value="${cartItems.cartItem.cartItemId}" name="id"/>
-                          <input style="width:50px; margin-left: 10px;"  type="number" name="quantity" placeholder="0" th:value="${cartItems.cartItem.quantity}"/>    
-                          <button type="submit" class="nav_item" ><img src="images/check.svg"></button>
+                          <input style="width:50px; margin-left: 10px; border: 0px"  type="number" name="quantity" placeholder="0" th:value="${cartItems.cartItem.quantity}"/>    
+                          <button type="submit" style="background-color: white;"><i class="fa fa-check" aria-hidden="true"></i></button>
                        </form>
                     </td>
                     <td>
@@ -150,31 +157,31 @@
    </body>
    
    
-    <footer>
-        <div class="footer">
-        <div class="container">
+   <footer class="mt-auto">
+      <div class="footer">
+         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <ul class="location_icon">
-                    <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
-                    <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
-                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
-                    </ul>
-                </div>
+               <div class="col-md-8 offset-md-2">
+                  <ul class="location_icon">
+                     <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>TSG GmbH<br>Weg der Freundschaft 4<br>D-07546 Gera</li>
+                     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 15723228432<br><br><br></li>
+                     <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@tsg.com<br><br><br></li>
+                  </ul>
+               </div>
             </div>
-        </div>
-        <div class="copyright">
+         </div>
+         <div class="copyright">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                     <p>© 2023 Alle Rechte vorbehalten. Design by TSG GmbH</a></p>
-                    </div>
-                </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
+                  </div>
+               </div>
             </div>
-        </div>
-        </div>
-    </footer>
-
+         </div>
+      </div>
+   </footer>
+   
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>

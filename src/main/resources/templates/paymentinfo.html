@@ -103,7 +103,6 @@
 
 <body class="main-layout">
 
-  <!-- banner -->
   <section class="banner_main">
     <div class="container">
       <div class="row">
@@ -113,106 +112,96 @@
       </div>
     </div>
   </section>
-  <!-- end banner -->
-
-  <div class="container-lg min-vh-100" style="width:50%; margin: 0 auto;">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <button id="billingBtn" class="read_more">Lieferadresse die selbe wie Rechnungsadresse?</button>
-        <div class="row" id="billingAddress">
-          <form th:action="@{/setBilling}" th:object="${Address}" method="post" class="main_form">
-            <div class="col-md-12 text-center">
-              <h2>Rechnungs Details</h3>
-            </div>
-            <div class="col-md-12">
-              <input class="contactus" placeholder="Name" type="type" name="Name" id="name" th:field="*{name}" required>
-            </div>
-            <div class="col-md-12">
-              <input class="contactus" placeholder="Straße" type="type" name="Straße" id="street" th:field="*{street}"
-                required>
-            </div>
-            <div class="col-md-12">
-              <input class="contactus" placeholder="Postleitzahl" type="type" name="plz" id="postalCode"
-                th:field="*{postalCode}" required>
-            </div>
-            <div class="col-md-12">
-              <input class="contactus" placeholder="Stadt" type="type" name="city" id="city" th:field="*{city}"
-                required>
-            </div>
-            <div class="col-md-12">
-              <input class="contactus" placeholder="Land" type="type" name="Land" id="country" th:field="*{country}"
-                required>
-            </div>
-            <div class="col-md-12">
-              <input class="read_more" type="submit" value="Nächster Schritt" onclick="displayNextStep()" />
-            </div>
-            <div class="col-md-12">
-              <button class="read_more" style="color: red;"><a th:href="@{/cancelCheckout}">Abbrechen</a></button>
-            </div>
+  
+    <div class="row" style="height: 34%; float: top;">
+      <div class="col-sm" id="billingAddress">
+          <form class="main_form">
+              <div class="row">
+                <div class="col-sm">
+                  <h3>Rechnungs Details</h3>
+                  <input class="contactus" placeholder="Name" type="type" name="Name" id="name" required>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-sm">
+                  <input class="contactus" placeholder="Straße" type="type" name="Straße" id="street" required>
+                </div>
+                <div class="col-sm">
+                  <input class="contactus" placeholder="Postleitzahl" type="type" name="plz" id="postalCode"  required>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-sm">
+                  <input class="contactus" placeholder="Stadt" type="type" name="city" id="city"  required>
+                </div>
+                <div class="col-sm">
+                  <input class="contactus" placeholder="Land" type="type" name="Land" id="country" required>
+                </div>
+              </div>
           </form>
-        </div>
-        <div class="row" id="paymentMethod">
-          <form th:action="@{/payment}" th:object="${PaymentMethod}" method="post" class="main_form">
-            <div class="col-md-12 text-center">
-              <h2>Zahlungs Details</h3>
-            </div>
-            <div class="col-md-12">
-              <label class="input-group-text" for="paymentMethod">Zahlungsmethoden:</label>
-              <select id="paymentMethod" th:field="*{type}" required class="form-select">
-                <option value="Invoice">Rechnung</option>
-                <option value="CreditCard">Kreditkarte</option>
-              </select>
-            </div>
-            <div class="col-md-12">
-              <div id="creditCardSection" style="display:none;">
-                <div class="input-group flex-nowrap">
-                  <label class="input-group-text" for="paymentMethod">Art:</label>
-                  <select id="paymentMethod" th:field="*{cardType}" required class="form-select">
-                    <option value="Visa">Visa</option>
-                    <option value="American Express">American Express</option>
+      </div>
+  
+        <div class="col-sm"  id="paymentMethodContainer">
+          <div class="row">
+            <form class="main_form">
+              <div class="row">
+                <div class="col-sm">
+                  <select id="paymentMethod" style="border-style:none; width: 100%; font-size:larger" required>
+                    <option selected>Zahlungsmethoden</option>
+                    <option value="Invoice">Rechnung</option>
+                    <option value="CreditCard">Kreditkarte</option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-12">
-                <input class="contactus" type="type" placeholder="Name" id="cardName" th:field="*{cardHolderName}"
-                  required>
+              <div class="row"  id="creditCardSection" style="display:none">
+                <div class="row">
+                  <div class="col-sm">
+                    <input class="contactus" type="type" placeholder="Name" id="cardName" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <input class="contactus" type="type" placeholder="Nummer" id="cardNumber" required>
+                  </div>
+                  <div class="col-sm">
+                    <input class="contactus" type="type" placeholder="CVV" id="cardCvv"  required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <input class="contactus" type="date" id="expiryYear" required min="2023">
+                  </div>
+                  <div class="col-sm">
+                    <input class="contactus" type="number" id="expiryYear" required min="1" max="12">
+                  </div>
+                </div>
               </div>
-              <div class="col-md-12">
-                <input class="contactus" type="type" placeholder="Nummer" id="cardNumber" th:field="*{cardNumber}"
-                  required>
-              </div>
-              <div class="col-md-12">
-                <input class="contactus" type="type" placeholder="CVV" id="cardCvv" th:field="*{cvv}" required>
-              </div>
-              <div class="col-md-12">
-                <input class="contactus" type="date" placeholder="AblaufDatum" id="expiryYear" th:field="*{expiryYear}"
-                  required min="2023">
-              </div>
-              <div class="col-md-12">
-                <input class="contactus" type="number" placeholder="AblaufMonat" id="expiryMonth"
-                  th:field="*{expiryMonth}" required min="1" max="12">
-              </div>
-              <div class="col-md-12">
-                <input class="read_more" type="submit" value="Zahlungspflichtig bestellen" />
-              </div>
-              <div class="col-md-12">
-                <button class="read_more" style="color: red;"><a th:href="@{/cancelCheckout}">Abbrechen</a></button>
-              </div>
-          </form>
+            </form>
+          </div>
         </div>
+    </div>
+  
+    <div class="row" style="padding: 0 100px">
+      <div class="col-sm">
+        <button id="billingBtn" class="read_more" onclick="displayBillingInformatioin()">Wie Rechnungsadresse</button>
+      </div>
+      <div class="col-sm">
+        <button class="send_btn" style="background-color: white"><a style="color: red;" th:href="@{/cancelCheckout}">Abbrechen</a></button>
+      </div>
+      <div class="col-sm">
+        <form method="post" th:action="@{/setpayment}" class="main_form">
+          <p><input type="checkbox" required> &nbsp; Ich habe die <a th:href="@{/wiederrufsbelehrung}">Widerrufsbelehrung</a> gelesen und akzeptiere diese</p>
+          <button class="send_btn" type="submit">Zahlungspflichtig bestellen</button>
+        </form>
       </div>
     </div>
-  </div>
+
+  
 
   <script>
-
-    function displayNextStep() {
-      var div = document.getElementById("paymentMethod");
-      div.style.display = "block";
-    }
-
-
-    document.getElementById("paymentMethod").addEventListener("change", function () {
+    document.getElementById("paymentMethod").addEventListener("change", function() {
       var paymentMethod = document.getElementById("paymentMethod").value;
       var creditCardSection = document.getElementById("creditCardSection");
       if (paymentMethod === "CreditCard") {
@@ -221,39 +210,38 @@
         creditCardSection.style.display = "none";
       }
     });
-    document.getElementById("billingBtn").addEventListener("click", function () {
-      document.getElementById("billingAddress").style.display = "none";
-    });
-    document.getElementById("billingBtn").style.display = "none";
-
+  
+  
   </script>
+
 
 </body>
 
 <footer class="mt-auto">
   <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <ul class="location_icon">
-            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
-            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
-            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <div class="container">
+     <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
-          </div>
+           <div class="col-md-8 offset-md-2">
+              <ul class="location_icon">
+                 <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>TSG GmbH<br>Weg der Freundschaft 4<br>D-07546 Gera</li>
+                 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 15723228432<br><br><br></li>
+                 <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@tsg.com<br><br><br></li>
+              </ul>
+           </div>
         </div>
-      </div>
-    </div>
+     </div>
+     <div class="copyright">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12">
+                 <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
+              </div>
+           </div>
+        </div>
+     </div>
   </div>
 </footer>
+     
 
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>

@@ -42,6 +42,8 @@ public class OrderService
         if(response.getStatusCode().isError())
         {
             throw new HttpClientErrorException(response.getStatusCode());
+        } else {
+            CartService.delCart();
         }
     }
     
@@ -68,6 +70,7 @@ public class OrderService
     public static void setPayment(String body)
     {
         ResponseEntity<String> response = SalesforceService.salesforceApiCall("/checkouts/active/payments", body, HttpMethod.POST);
+        System.out.println(body);
 
         if(response.getStatusCode().isError())
         {

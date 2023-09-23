@@ -42,11 +42,11 @@ public class Transformers
 
 
         JsonObject billlingAddress = new JsonObject();
-        billlingAddress.addProperty("name", address.getName());
-        billlingAddress.addProperty("country", address.getCountry());
-        billlingAddress.addProperty("city", address.getCity());
-        billlingAddress.addProperty("street", address.getStreet());
-        billlingAddress.addProperty("postalCode", address.getPostalCode());
+        billlingAddress.addProperty("name", "name");
+        billlingAddress.addProperty("country", "US");
+        billlingAddress.addProperty("city", "name");
+        billlingAddress.addProperty("street", "name");
+        billlingAddress.addProperty("postalCode", "name");
 
         JsonObject output = new JsonObject();
         output.addProperty("paymentToken", OrderService.getPaymentToken(cardInfosIn.toString()));
