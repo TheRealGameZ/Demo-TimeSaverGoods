@@ -117,6 +117,7 @@ public class HomeController
           }
           
           model.addAttribute("cartItems", CartService.getCartItems().getCartItems());
+          model.addAttribute("cartTotal", CartService.getCart().getGrandTotalAmount());
           return "cart";
      }
 

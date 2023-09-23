@@ -100,7 +100,7 @@
          </div>
       </section>
 
-      <div class="container">
+      <div class="container" style="margin-bottom: 50px;">
          <table class="table">
             <thead>
                 <tr>
@@ -133,12 +133,18 @@
             </tbody>
         </table>
         <div class="text-right">
-            <h3>Gesamt: 84,95 €</h3>
+            <h3 th:text="'Gesamt:  ' + ${cartTotal}"></h3>
         </div>
-        <div class="text-center mt-4">
-           <a th:href="@{/checkout}"><button class="read_more">Jetzt Bestellen</button></a>
-           <a th:href="@{/cart/delete}"><button class="read_more">Einkaufswagen leeren</button></a>
-        </div>
+        <div class="container">
+         <div class="row">
+               <div class="col-sm">
+                  <a th:href="@{/cart/delete}"><button class="send_btn" style="color: red; background-color: white;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp; Einkaufswagen leeren</button></a>
+               </div>
+               <div class="col-sm">
+                  <a th:href="@{/checkout}"><button class="send_btn">Jetzt Bestellen</button></a>
+               </div>
+         </div>
+       </div>   
       </div>
 
    </body>
