@@ -39,7 +39,7 @@ public class HomeController
      @GetMapping("/test")
     public String test(Model model) {
           Gson gson = new Gson();
-          String json = gson.toJson(ProductRequestService.getAllProducts());
+          String json = gson.toJson(ProductRequestService.getProductByID("01t68000000XcxPAAS"));
           model.addAttribute("jsonData", json);
 
           return "test";

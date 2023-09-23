@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
+import com.example.demo.models.PriceInfo;
+import com.example.demo.models.ProductData;
 import com.example.demo.models.ProductRequest;
 import com.example.demo.models.ProductRequest.Product;
 import com.google.gson.Gson;
@@ -47,18 +49,22 @@ public class ProductRequestService
 
     }
 
-    public static Product getProductByID(String id)
+    public static ProductData getProductByID(String id)
     {
         Gson gson = new Gson();
         ResponseEntity<String> response = SalesforceService.salesforceApiCall("/products/"+id, "", HttpMethod.GET);
+        ResponseEntity<String> responsePrice = SalesforceService.salesforceApiCall("/pricing/products/"+id, "", HttpMethod.GET);
         
-        if(response.getStatusCode().isError())
+        if(response.getStatusCode().isError() || responsePrice.getStatusCode().isError())
         {
             throw new HttpClientErrorException(response.getStatusCode());
         }
         else
         {
-            return gson.fromJson(response.getBody(),Product.class);
+            PriceInfo price = gson.fromJson(responsePrice.getBody(),PriceInfo.class);
+            ProductData productData = gson.fromJson(response.getBody(),ProductData.class);
+            productData.setUnitPrice(price.getUnitPrice());
+            return productData;
         }
     }
 

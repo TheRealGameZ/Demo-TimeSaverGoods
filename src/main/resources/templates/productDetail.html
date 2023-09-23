@@ -37,7 +37,6 @@
   </style>
 
    <header>
-      <!-- header inner -->
       <div class="header">
          <div class="container-fluid">
             <div class="row">
@@ -102,33 +101,34 @@
       </section>
 
          <div class="container-fluid" style="margin-top: 50px;">
-            <h5 class="card-title" th:text="${product.name}"></h5>
-            <p class="card-text" th:text=""></p>
+            <h5 class="card-title" th:text="${product.fields.Name}"></h5>
+            <p class="card-text" th:text="${product.fields.Description}"></p>
+            <p class="card-text" th:text="${product.unitPrice}"></p>
          </div>
    </body>
 
-   <footer>
+   <footer class="mt-auto">
       <div class="footer">
-      <div class="container">
-         <div class="row">
+         <div class="container">
+            <div class="row">
                <div class="col-md-8 offset-md-2">
                   <ul class="location_icon">
-                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
-                  <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
-                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
+                     <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>TSG GmbH<br>Weg der Freundschaft 4<br>D-07546 Gera</li>
+                     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 15723228432<br><br><br></li>
+                     <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@tsg.com<br><br><br></li>
                   </ul>
                </div>
+            </div>
          </div>
-      </div>
-      <div class="copyright">
-         <div class="container">
+         <div class="copyright">
+            <div class="container">
                <div class="row">
                   <div class="col-md-12">
-                  <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
+                     <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
                   </div>
                </div>
+            </div>
          </div>
-      </div>
       </div>
    </footer>
 
