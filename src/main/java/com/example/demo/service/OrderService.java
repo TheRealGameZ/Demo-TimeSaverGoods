@@ -42,14 +42,20 @@ public class OrderService
         if(response.getStatusCode().isError())
         {
             throw new HttpClientErrorException(response.getStatusCode());
-        } else {
-            CartService.delCart();
         }
     }
     
-    public static void setAddress(String body)
+    public static String setAddress(String body)
     {
-        SalesforceService.patchRequest("/checkouts/active", body);
+        String response = SalesforceService.patchRequest("/checkouts/active", body);
+
+        if(response != null)
+        {
+            System.out.println("SET ADDRESS IS OKAY");
+            return response;
+        } else {
+            return null;
+        }
     }
     
     public static String getPaymentToken(String body)
@@ -70,7 +76,6 @@ public class OrderService
     public static void setPayment(String body)
     {
         ResponseEntity<String> response = SalesforceService.salesforceApiCall("/checkouts/active/payments", body, HttpMethod.POST);
-        System.out.println(body);
 
         if(response.getStatusCode().isError())
         {
@@ -78,13 +83,15 @@ public class OrderService
         }
     }
 
-    public static void setOrder()
+    public static String setOrder()
     {
         ResponseEntity<String> response = SalesforceService.salesforceApiCall("/checkouts/active/orders", "", HttpMethod.POST);
 
         if(response.getStatusCode().isError())
         {
             throw new HttpClientErrorException(response.getStatusCode());
+        } else {
+            return response.getBody();
         }
     }    
 }
