@@ -58,11 +58,7 @@ public class HomeController
      public String viewHomePage(Model model, HttpServletResponse response) 
      {
           List<Product> products = ProductRequestService.getAllProducts();
-          
-          for (Product product : products) {
-               String prodUrl = product.defaultImage.url;
-               product.defaultImage.url = "https://resilient-bear-3oxray-dev-ed.trailblaze.lightning.force.com/"+prodUrl;
-          }
+
 
           model.addAttribute("allProductList", products);
 

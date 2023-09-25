@@ -105,6 +105,7 @@
       <form th:action="@{/products}" th:object="${product}" method="POST" class="product-form">
          <input type="hidden" th:value="${product.id}" name="id"/>
          <div class="product-img">
+            <p style="display: none;" th:text="${product.defaultImage.url}"></p>
             <a th:href="@{/products/{id}(id=${product.id})}"><img th:src="${product.defaultImage.url}" height="420" width="327"></a>
          </div>
       
