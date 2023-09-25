@@ -716,8 +716,6 @@ button {
 }
 
 .main_form {
-     position: absolute;
-     z-index: 999;
      background: #fff;
      padding: 40px 50px;
      margin-top: 107px;

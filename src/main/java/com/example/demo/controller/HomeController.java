@@ -99,6 +99,7 @@ public class HomeController
      {
           try 
           {
+               OrderService.cancelCheckout();
                CartService.getCart();
 
           } catch (Exception e)
