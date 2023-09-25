@@ -151,12 +151,12 @@
                     <input class="contactusmess" placeholder="Kartennummer" type="number" th:field="*{paymentMethod.cardNumber}" minlength="8" maxlength="20" required>
                 </div>
                 <div class="col-sm">
-                    <input class="contactusmess" placeholder="CVV" type="number" th:field="*{paymentMethod.cvv}" minlength="3" maxlength="3" required>
+                    <input class="contactusmess" placeholder="CVV" type="number" th:field="*{paymentMethod.cvv}" maxlength="3" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <input class="contactusmess" placeholder="Ablaufjahr" type="number" th:field="*{paymentMethod.expiryYear}" minlength="2" maxlength="2" required>
+                    <input class="contactusmess" placeholder="Ablaufjahr" type="number" th:field="*{paymentMethod.expiryYear}" min="23" max="28" required>
                 </div>
                 <div class="col-sm">
                     <input class="contactusmess" placeholder="Ablaufmonat" type="number" th:field="*{paymentMethod.expiryMonth}" min="1" max="12" required>
