@@ -27,7 +27,7 @@ public class HomeController
      public String index(Model model, HttpServletResponse response) 
      {
           model.addAttribute("allProductList", ProductRequestService.getSomeProducts());
-          return "/home";
+          return "home";
      }
 
      @GetMapping("/test")
@@ -42,13 +42,13 @@ public class HomeController
      @GetMapping("/login")
      public String login() 
      {
-          return "/login";
+          return "login";
      }
 
       @GetMapping("/register")
      public String register() 
      {
-          return "/register";
+          return "register";
      }
 
      //----------------------------- PRODUCTS -----------------------------//
