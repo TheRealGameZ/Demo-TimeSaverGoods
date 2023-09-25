@@ -184,10 +184,10 @@ public class HomeController
     }
 
 
-    @GetMapping("/wiederrufsbelehrung")
+    @GetMapping("/widerrufsbelehrung")
     public String viewWiederruf()
     {
-        return "wiederrufsbelehrung";
+        return "widerrufsbelehrung";
     }
 
 
