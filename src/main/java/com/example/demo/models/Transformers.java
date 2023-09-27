@@ -27,26 +27,26 @@ public class Transformers
     }
 
     //Payment to JSON-String
-    public static String transformPayment(PaymentMethod paymentMethod, Address address) 
+    public static String transformPayment( Address address, PaymentMethod paymentMethod) 
     {
         JsonObject cardInfos = new JsonObject();
         cardInfos.addProperty("cardHolderName", paymentMethod.getCardHolderName());
         cardInfos.addProperty("cardNumber", paymentMethod.getCardNumber());
-        cardInfos.addProperty("expiryMonth", paymentMethod.getExpiryMonth());
+        cardInfos.addProperty("expiryMonth",paymentMethod.getExpiryMonth() );
         cardInfos.addProperty("expiryYear", paymentMethod.getExpiryYear());
         cardInfos.addProperty("cvv", paymentMethod.getCvv());
-        cardInfos.addProperty("cardType", paymentMethod.getCardType());
+        cardInfos.addProperty("cardType", "Visa");
     
         JsonObject cardInfosIn = new JsonObject();
         cardInfosIn.add("cardPaymentMethod", cardInfos);
 
 
         JsonObject billlingAddress = new JsonObject();
-        billlingAddress.addProperty("name", "name");
-        billlingAddress.addProperty("country", "US");
-        billlingAddress.addProperty("city", "name");
-        billlingAddress.addProperty("street", "name");
-        billlingAddress.addProperty("postalCode", "name");
+        billlingAddress.addProperty("name", address.getName());
+        billlingAddress.addProperty("country", address.getCountry());
+        billlingAddress.addProperty("city", address.getCity());
+        billlingAddress.addProperty("street", address.getStreet());
+        billlingAddress.addProperty("postalCode", address.getPostalCode());
 
         JsonObject output = new JsonObject();
         output.addProperty("paymentToken", OrderService.getPaymentToken(cardInfosIn.toString()));

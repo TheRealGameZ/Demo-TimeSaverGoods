@@ -2,12 +2,12 @@ package com.example.demo.models;
 
 public class Address 
 {
-    private String shippingInstructions;
-    private String name;
-    private String street;
-    private String country;
-    private String postalCode;
-    private String city;
+    public String shippingInstructions;
+    public String name;
+    public String street;
+    public String country;
+    public String postalCode;
+    public String city;
 
 
     public String getShippingInstructions() {
@@ -17,32 +17,32 @@ public class Address
         this.shippingInstructions = shippingInstructions;
     }
     public String getName() {
-        return name;
+        return this.name;
     }
     public void setName(String name) {
         this.name = name;
     }
     public String getStreet() {
-        return street;
+        return this.street;
     }
     public void setStreet(String street) {
         this.street = street;
     }
     public String getCountry() {
-        return country;
+        return this.country;
     }
     public void setCountry(String country) {
         this.country = country;
     }
 
     public String getPostalCode() {
-        return postalCode;
+        return this.postalCode;
     }
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
     public String getCity() {
-        return city;
+        return this.city;
     }
     public void setCity(String city) {
         this.city = city;

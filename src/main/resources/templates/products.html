@@ -63,7 +63,7 @@
                               <a class="nav-link" th:href="@{/products}">Produkte</a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" th:href="@{/about}">Über uns</a>
+                              <a class="nav-link" th:href="@{/about}">Über Uns</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" th:href="@{/impressum}">Impressum</a>
@@ -94,7 +94,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <p>Hier muss noch was hin</p>
+                  <p>Deine Schönheit, deine Zeit - TimeSaverGoods macht es möglich</p>
                </div>
             </div>
          </div>
@@ -105,6 +105,7 @@
       <form th:action="@{/products}" th:object="${product}" method="POST" class="product-form">
          <input type="hidden" th:value="${product.id}" name="id"/>
          <div class="product-img">
+            <p style="display: none;" th:text="${product.defaultImage.url}"></p>
             <a th:href="@{/products/{id}(id=${product.id})}"><img th:src="${product.defaultImage.url}" height="420" width="327"></a>
          </div>
       

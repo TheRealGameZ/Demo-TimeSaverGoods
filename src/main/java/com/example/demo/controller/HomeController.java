@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 import java.util.List;
+import com.google.gson.Gson;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+
+
+
+import com.example.demo.models.Address;
+import com.example.demo.models.PaymentMethod;
+import com.example.demo.models.CombinedModel;
+import com.example.demo.models.Transformers;
+import com.example.demo.service.OrderService;
+import java.util.concurrent.CompletableFuture;
+
+
 
 import com.example.demo.service.CartService;
 import com.example.demo.service.ProductRequestService;
@@ -27,7 +40,7 @@ public class HomeController
      public String index(Model model, HttpServletResponse response) 
      {
           model.addAttribute("allProductList", ProductRequestService.getSomeProducts());
-          return "/home";
+          return "home";
      }
 
      @GetMapping("/test")
@@ -42,13 +55,13 @@ public class HomeController
      @GetMapping("/login")
      public String login() 
      {
-          return "/login";
+          return "login";
      }
 
       @GetMapping("/register")
      public String register() 
      {
-          return "/register";
+          return "register";
      }
 
      //----------------------------- PRODUCTS -----------------------------//
@@ -58,11 +71,7 @@ public class HomeController
      public String viewHomePage(Model model, HttpServletResponse response) 
      {
           List<Product> products = ProductRequestService.getAllProducts();
-          
-          for (Product product : products) {
-               String prodUrl = product.defaultImage.url;
-               product.defaultImage.url = "https://resilient-bear-3oxray-dev-ed.trailblaze.lightning.force.com/"+prodUrl;
-          }
+
 
           model.addAttribute("allProductList", products);
 
@@ -103,6 +112,7 @@ public class HomeController
      {
           try 
           {
+               OrderService.cancelCheckout();
                CartService.getCart();
 
           } catch (Exception e)
@@ -159,26 +169,49 @@ public class HomeController
 
       //----------------------------- Checkout -----------------------------//
 
+    private String orderNumber;
+
+    private class orderConfirmation{
+     public String orderReferenceNumber;
+    }
+    
     @GetMapping("/checkout")
-    public String startCheckout()
+    public String startCheckout(Model model)
     {
           OrderService.setCheckout();
-        return "checkout";
+          model.addAttribute("combinedModel", new CombinedModel());
+          return "checkout";
     }
+
 
     @PostMapping("/placeOrder")
-    public String checkout() 
-    {
-        return "paymentinfo";
-    }
+     public String checkout(@ModelAttribute("combinedModel") CombinedModel combinedModel, Model model) {
+     // Extrahieren der Address und PaymentMethod aus dem kombinierten Modell
+     Address address = combinedModel.getAddress();
+     PaymentMethod paymentMethod = combinedModel.getPaymentMethod();
 
-    @PostMapping("/setpayment")
-    public String setPayment() 
-    {
-          OrderService.cancelCheckout();
+     CompletableFuture<Void> setAddressFuture = CompletableFuture.runAsync(() -> {
+        OrderService.setAddress(Transformers.transformAddress(address));
+    });
 
-       return "redirect:/";
-    }
+          setAddressFuture.join();
+
+          OrderService.setPayment(Transformers.transformPayment(address, paymentMethod));
+
+          Gson gson = new Gson();
+          this.orderNumber = gson.fromJson(OrderService.setOrder(),orderConfirmation.class).orderReferenceNumber;
+          
+          
+          return "redirect:/orderConfirmation";
+
+     }
+
+     @GetMapping("/orderConfirmation")
+     public String orderConfirmation(Model model){
+
+          model.addAttribute("OrderNumber", this.orderNumber);
+          return "orderConfirmation";
+     }
 
     @GetMapping("/cancelCheckout")
     public String cancelCheckout()
@@ -188,10 +221,10 @@ public class HomeController
     }
 
 
-    @GetMapping("/wiederrufsbelehrung")
+    @GetMapping("/widerrufsbelehrung")
     public String viewWiederruf()
     {
-        return "wiederrufsbelehrung";
+        return "widerrufsbelehrung";
     }
 
 

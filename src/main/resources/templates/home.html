@@ -31,7 +31,7 @@
       body {
           display: flex;
           flex-direction: column;
-          min-height: 380vh;
+          min-height: 1500px;
       }
 
   </style>
@@ -64,7 +64,7 @@
                               <a class="nav-link" th:href="@{/products}">Produkte</a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" th:href="@{/about}">Über uns</a>
+                              <a class="nav-link" th:href="@{/about}">Über Uns</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" th:href="@{/impressum}">Impressum</a>
@@ -108,7 +108,7 @@
                   <div class="container">
                      <div class="carousel-caption">
                         <div class="text-bg">
-                           <h1> <span class="blu">Herzlich Willkommen<br></span>bei TimeSaverGoods!</h1>
+                           <h1> <span class="blu">Herzlich Willkommen</br></br></span>bei TimeSaverGoods!</h1>
                            <figure><img src="images/placeholder.jpg" alt="#"/></figure>
                         </div>
                      </div>
@@ -146,172 +146,185 @@
          </div>
       </section>
 
-      <div class="about">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <div class="about_img">
-                     <figure><img src="images/home1.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>Über diesen Shop</h2>
-                     <p>Bei TimeSaverGoods liegt es uns am Herzen, Ihr Leben zu vereinfachen. Unser Shop ist bestrebt, Sie über unser praktisches Abonnementmodell mit hochwertigen Haushaltsartikeln und Kosmetika zu versorgen. Mit unserem Engagement für individuelle Anpassung und erstklassigem Service sind wir hier, um Ihre täglichen Routinen zum Kinderspiel zu machen. Willkommen bei einer neuen Art des Einkaufens.</p>
-                  </div>
-                  <a class="read_more" th:href="@{/about}">Mehr erfahren</a>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div class="glasses">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-10 offset-md-1">
-                  <div class="titlepage">
-                     <h2>Unsere Produkte</h2>
-                     <p>Entdecken Sie bei TimeSaverGoods eine kuratierte Auswahl an erstklassigen Haushaltsartikeln und Kosmetika. Unsere Produkte werden sorgfältig ausgewählt, um Ihre täglichen Bedürfnisse unter Berücksichtigung von Qualität und Komfort zu erfüllen. Von alltäglichen Haushaltsgegenständen bis hin zu Beauty-Must-Haves – bei uns sind Sie an der richtigen Adresse. Entdecken Sie unser Sortiment und verbessern Sie Ihren Alltag mit Produkten, denen Sie vertrauen können.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" th:each="product : ${allProductList}">
-                  <figure><img src="images/lol.jpg" alt="#"/></figure>
-                  <input type="hidden" th:value="${product.id}" name="id"/>
-                  <p th:text="${product.name}"></p>
-                  <a th:href="@{/products/{id}(id=${product.id})}"><button type="submit" class="read_more">Mehr erfahren</button></a>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div id="about" class="shop">
-         <div class="container-fluid">
-             <div class="row">
-                 <div class="col-md-5">
-                     <img src="images/home2.jpg" alt="#" style="height:100%;">
-                 </div>
-                 <div class="col-md-7 padding_right0">
-                     <div class="max_width">
-                         <div class="titlepage">
-                             <h2>Einfaches Abonnement</h2>
-                             <p>Verabschieden Sie sich vom lästigen Einkauf von Alltagsgegenständen. Mit unserem FMCD-Abonnementmodell können Sie Ihre Lieferungen individuell anpassen und die Produkte genießen, die Sie lieben, ohne einen Finger zu rühren.</p>
-                             <a class="read_more" th:href="@{/products}">Jetzt einkaufen</a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-
-      <div class="clients">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Was unsere Kunden denken</h2>
-                     <p>Das Feedback unserer Kunden sagt Bände über die Qualität unserer Dienstleistung. Wir sind stolz auf die positiven Bewertungen und Erfahrungen unserer geschätzten Kunden. Es ist ihre Zufriedenheit, die uns dazu antreibt, uns kontinuierlich zu verbessern und das Beste zu liefern. Vielen Dank, dass Sie sich für uns entschieden haben und ein wesentlicher Bestandteil unserer Reise sind.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-12">
-                  <div id="myCarousel" class="carousel slide clients_Carousel " data-ride="carousel">
-                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                     </ol>
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="container">
-                              <div class="carousel-caption ">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="clients_box">
-                                          <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                                          <h3>Sarah Fischer</h3>
-                                          <p>Ich liebe es, wie TimeSaverGoods mein Leben vereinfacht hat. Mit ihrem Abo-Service gehen mir meine Lieblingskosmetik nie aus und die Qualität ihrer Produkte ist erstklassig.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="clients_box">
-                                          <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                                          <h3>John Breitheim</h3>
-                                          <p>Ein fantastisches Konzept! Die Möglichkeit, meine Lieferungen an meine sich ständig ändernden Bedürfnisse anzupassen, ist bahnbrechend. Außerdem ist ihr Kundenservice unglaublich reaktionsschnell.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="clients_box">
-                                          <figure><img src="images/placeholder.jpg" alt="#"/></figure>
-                                          <h3>Emma Heimland</h3>
-                                          <p>Ich bin beruflich vielbeschäftigt und TimeSaverGoods hat den Einkauf von Haushaltsgegenständen zum Kinderspiel gemacht. Ihre Website ist benutzerfreundlich und die Produkte kommen immer pünktlich und in einwandfreiem Zustand an.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                     <i class='fa fa-angle-left'></i>
-                     </a>
-                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                     <i class='fa fa-angle-right'></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div class="container-lg" style="width:50%; margin: 30px auto;">
+      <div class="container-fluid">
          <div class="row">
-            <div class="col-md-6 offset-md-3">
-               <form id="request" class="main_form">
+            <div class="shop">
+               <div class="container-fluid">
+                   <div class="row">
+                       <div class="col-md-5">
+                        <figure><img src="images/BildWebsite.jpeg" alt="#" height="300px"/></figure>
+                     </div>
+                     <div class="col-md-7 padding_right">
+                        <div class="max_width">
+                        <div class="titlepage">
+                           <h2>Über diesen Shop</h2>
+                           <p>Bei TimeSaverGoods liegt es uns am Herzen, Ihr Leben zu vereinfachen. Unser Shop ist bestrebt, Sie über unser praktisches Abonnementmodell mit hochwertigen Haushaltsartikeln und Kosmetika zu versorgen. Mit unserem Engagement für individuelle Anpassung und erstklassigem Service sind wir hier, um Ihre täglichen Routinen zum Kinderspiel zu machen. Willkommen bei einer neuen Art des Einkaufens.</p>
+                           <a class="read_more" th:href="@{/about}">Mehr erfahren</a>
+                        </div>
+                     </div>
+                     </div>
+                   </div>
+               </div>
+            </div>
+         <div class="row">
+            <div class="glasses">
+               <div class="container-fluid">
                   <div class="row">
-                     <div class="col-md-12 contactustitle">
-                        <h3>Kontaktieren Sie uns!</h3>
-                     </div>
-                     <div class="col-md-12 ">
-                        <input class="contactus" placeholder="Name" type="type" name="Name"> 
-                     </div>
-                     <div class="col-md-12">
-                        <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number"> 
-                     </div>
-                     <div class="col-md-12">
-                        <input class="contactus" placeholder="Email" type="type" name="Email">                          
-                     </div>
-                     <div class="col-md-12">
-                        <input class="contactusmess" placeholder="Nachricht" type="type" Message="Name">
-                     </div>
-                     <div class="col-md-12">
-                        <button class="send_btn">Abschicken</button>
+                     <div class="col-md-10 offset-md-1">
+                        <div class="titlepage">
+                           <h2>Unsere Produkte</h2>
+                           <p>Entdecken Sie bei TimeSaverGoods eine kuratierte Auswahl an erstklassigen Haushaltsartikeln und Kosmetika. Unsere Produkte werden sorgfältig ausgewählt, um Ihre täglichen Bedürfnisse unter Berücksichtigung von Qualität und Komfort zu erfüllen. Von alltäglichen Haushaltsgegenständen bis hin zu Beauty-Must-Haves – bei uns sind Sie an der richtigen Adresse. Entdecken Sie unser Sortiment und verbessern Sie Ihren Alltag mit Produkten, denen Sie vertrauen können.</p>
+                        </div>
                      </div>
                   </div>
-               </form>
+               </div>
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" th:each="product : ${allProductList}">
+                        <figure><img th:src="${product.defaultImage.url}" alt="#"/></figure>
+                        <input type="hidden" th:value="${product.id}" name="id"/>
+                        <p th:text="${product.name}"></p>
+                        <p style="display: none;" th:text="${product.defaultImage.url}"></p>
+                        <a th:href="@{/products/{id}(id=${product.id})}"><button type="submit" class="read_more">Mehr erfahren</button></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div id="about" class="shop">
+               <div class="container-fluid">
+                   <div class="row">
+                       <div class="col-md-5">
+                           <img src="images/home2.jpg" alt="#" style="height:100%;">
+                       </div>
+                       <div class="col-md-7 padding_right">
+                           <div class="max_width">
+                               <div class="titlepage">
+                                   <h2>Einfaches Abonnement</h2>
+                                   <p>Verabschieden Sie sich vom lästigen Einkauf von Alltagsgegenständen. Mit unserem FMCD-Abonnementmodell können Sie Ihre Lieferungen individuell anpassen und die Produkte genießen, die Sie lieben, ohne einen Finger zu rühren.</p>
+                                   <a class="read_more" th:href="@{/products}">Jetzt einkaufen</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+      
+           
+         </div>
+         <div class="row">
+            <div class="clients">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="titlepage">
+                           <h2>Was unsere Kunden denken</h2>
+                           <p>Das Feedback unserer Kunden sagt Bände über die Qualität unserer Dienstleistung. Wir sind stolz auf die positiven Bewertungen und Erfahrungen unserer geschätzten Kunden. Es ist ihre Zufriedenheit, die uns dazu antreibt, uns kontinuierlich zu verbessern und das Beste zu liefern. Vielen Dank, dass Sie sich für uns entschieden haben und ein wesentlicher Bestandteil unserer Reise sind.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div id="myCarousel" class="carousel slide clients_Carousel " data-ride="carousel">
+                           <ol class="carousel-indicators">
+                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                           </ol>
+                           <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                 <div class="container">
+                                    <div class="carousel-caption ">
+                                       <div class="row">
+                                          <div class="col-md-12">
+                                             <div class="clients_box">
+                                                <figure><img src="images/Kundenbewertung3.jpg" alt="#"/></figure>
+                                                <h3>Sarah Fischer</h3>
+                                                <p>Ich liebe es, wie TimeSaverGoods mein Leben vereinfacht hat. Mit ihrem Abo-Service gehen mir meine Lieblingskosmetik nie aus und die Qualität ihrer Produkte ist erstklassig.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="carousel-item">
+                                 <div class="container">
+                                    <div class="carousel-caption">
+                                       <div class="row">
+                                          <div class="col-md-12">
+                                             <div class="clients_box">
+                                                <figure><img src="images/Kundenbewertung2.jpg" alt="#"/></figure>
+                                                <h3>John Breitheim</h3>
+                                                <p>Ein fantastisches Konzept! Die Möglichkeit, meine Lieferungen an meine sich ständig ändernden Bedürfnisse anzupassen, ist bahnbrechend. Außerdem ist ihr Kundenservice unglaublich reaktionsschnell.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="carousel-item">
+                                 <div class="container">
+                                    <div class="carousel-caption">
+                                       <div class="row">
+                                          <div class="col-md-12">
+                                             <div class="clients_box">
+                                                <figure><img src="images/Kundenbewertung1.jpg
+                                                   " alt="#"/></figure>
+                                                <h3>Emma Heimland</h3>
+                                                <p>Ich bin beruflich vielbeschäftigt und TimeSaverGoods hat den Einkauf von Haushaltsgegenständen zum Kinderspiel gemacht. Ihre Website ist benutzerfreundlich und die Produkte kommen immer pünktlich und in einwandfreiem Zustand an.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                           <i class='fa fa-angle-left'></i>
+                           </a>
+                           <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                           <i class='fa fa-angle-right'></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="container-fluid" style="width:50%; margin: 30px auto;">
+               <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                     <form id="request" class="main_form">
+                        <div class="row">
+                           <div class="col-md-12 contactustitle">
+                              <h3>Kontaktieren Sie uns!</h3>
+                           </div>
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="Name" type="type" name="Name"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Email" type="type" name="Email">                          
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactusmess" placeholder="Nachricht" type="type" Message="Name">
+                           </div>
+                           <div class="col-md-12">
+                              <button class="send_btn">Abschicken</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
+
+      
 
 </body>
 
