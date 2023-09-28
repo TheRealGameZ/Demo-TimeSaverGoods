@@ -103,7 +103,7 @@ public class SalesforceService
     }
 
     //Get Access via SOAP
-    public static void login() throws Exception
+    public static void login()
     {
         
         HttpHeaders headers = new HttpHeaders();
@@ -130,7 +130,7 @@ public class SalesforceService
 
         } catch (Exception e) 
         {
-           throw new Exception("Authentication error");
+            System.out.println(e.getMessage());
         }  
     }
 
