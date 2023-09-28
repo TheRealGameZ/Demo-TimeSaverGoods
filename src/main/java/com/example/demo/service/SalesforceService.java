@@ -54,7 +54,17 @@ public class SalesforceService
         headers.set("Authorization", "Bearer " + accessToken);
 
         HttpEntity<String> entity = new HttpEntity<String>(body, headers);
-        return restTemplate.exchange(MAINURL + url, method, entity, String.class);   
+
+        try{
+
+            return restTemplate.exchange(MAINURL + url, method, entity, String.class);   
+        } catch(Error e)
+        {
+            System.out.println(e.getMessage());
+            login();
+            return restTemplate.exchange(MAINURL + url, method, entity, String.class);   
+        }
+
     }
 
     //Send Patch-Requests to Salesforce
