@@ -22,6 +22,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+import java.util.concurrent.CompletableFuture;
 
 
 @Service
@@ -61,7 +62,13 @@ public class SalesforceService
         } catch(Error e)
         {
             System.out.println(e.getMessage());
-            login();
+
+            CompletableFuture<Void> loginFuture = CompletableFuture.runAsync(() -> {
+                login();
+            });
+
+            loginFuture.join();
+
             return restTemplate.exchange(MAINURL + url, method, entity, String.class);   
         }
 

@@ -71,8 +71,6 @@ public class HomeController
      public String viewHomePage(Model model, HttpServletResponse response) 
      {
           List<Product> products = ProductRequestService.getAllProducts();
-
-
           model.addAttribute("allProductList", products);
 
           return "products";

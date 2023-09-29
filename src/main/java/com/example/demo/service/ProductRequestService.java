@@ -78,6 +78,8 @@ public class ProductRequestService
         {
             PriceInfo price = gson.fromJson(responsePrice.getBody(), PriceInfo.class);
             ProductData productData = gson.fromJson(response.getBody(), ProductData.class);
+            productData.defaultImage.url = "../images/"+productData.fields.getname().substring(0,4) + ".jpeg";
+
             productData.setUnitPrice(price.getUnitPrice());
             return productData;
         }

@@ -29,15 +29,6 @@
       media="screen">
 </head>
 
-<style>
-   /* Benutzerdefiniertes CSS, um den Body zu zentrieren */
-   body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-   }
-</style>
-
 <header>
    <div class="header">
       <div class="container-fluid">
@@ -105,11 +96,10 @@
       </div>
    </section>
 
-   <div class="container" style="margin: 0 auto;">
-      <div class="row">
+   <div class="container-fluid" style="padding-left: 30%; padding-right: 30%">
          <form th:action="@{/placeOrder}" th:object="${combinedModel}" method="post" id="combinedForm" class="main_form">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm h3title">
                     <h2>Bestelldetails</h2>
                 </div>
             </div>
@@ -141,8 +131,13 @@
             </div>
     
             <!-- Formular für Zahlungsinformationen -->
+             <div class="row">
+                 <div class="col-sm h3title">
+                     <h2>Kartendetails</h2>
+                 </div>
+             </div>
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm ">
                     <input class="contactusmess" placeholder="Name auf Karte" type="text" th:field="*{paymentMethod.cardHolderName}" required>
                 </div>
             </div>
@@ -163,13 +158,29 @@
                 </div>
             </div>
 
-            <div class="row">
+             <div class="row" style="padding-left: 50px; Margin-top:50px">
+                 <div class="form-check">
+                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                     <label class="form-check-label" for="flexRadioDefault1">
+                         DHL Standard Lieferung + 4,99€
+                     </label>
+                 </div>
+             </div>
+             <div class="row" style="padding-left: 50px; margin-bottom: 50px;">
+                 <div class="form-check">
+                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                     <label class="form-check-label" for="flexRadioDefault2">
+                         Hermes Standard Lieferung + 5,99€
+                     </label>
+                 </div>
+             </div>
+
+            <div class="row" style="padding-left: 50px">
                <p><input type="checkbox" required> &nbsp; Ich habe die <a th:href="@{/widerrufsbelehrung}">Widerrufsbelehrung</a> gelesen und akzeptiere diese</p>
             </div>
             
-            <button class="send_btn" type="submit">Jetzt Zahlubngspflichtig bestellen</button>
+            <button class="send_btn" type="submit">Jetzt Zahlungspflichtig bestellen</button>
         </form>
-      </div>
    </div>
 
 </body>
@@ -206,5 +217,16 @@
 <script src="js/jquery-3.0.0.min.js"></script>
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/custom.js"></script>
+
+<style>
+    .h3title{
+        color: #2a2a2c;
+        font-size: 26px;
+        line-height: 30px;
+        padding-top: 23px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+</style>
 
 </html>
