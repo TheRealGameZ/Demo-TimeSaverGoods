@@ -3,7 +3,8 @@ package com.example.demo.models;
 import java.util.List;
 
 public class ProductRequest {
-    public class Product {
+    public class Product {        
+
         public String id;
         public String name;
         public DefaultImage defaultImage;

@@ -1,7 +1,5 @@
 package com.example.demo.models;
 
-import com.example.demo.models.Address;
-import com.example.demo.models.PaymentMethod;
 
 public class CombinedModel {
     private Address address;

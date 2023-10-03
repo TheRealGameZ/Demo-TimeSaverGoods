@@ -66,7 +66,7 @@
                            <a class="nav-link" th:href="@{/datenschutz}">Datenschutz</a>
                         </li>
                         <li class="nav-item d_none sea_icon">
-                           <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i
+                           <a class="nav-link" href="#"><i
                                  class="fa fa-search" aria-hidden="true"></i></a>
                         </li>
                         <li class="nav-item d_none login_btn">
@@ -87,100 +87,102 @@
 <body class="main-layout">
 
    <section class="banner_main">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <p>Hier muss noch was hin</p>
-            </div>
-         </div>
-      </div>
+
    </section>
 
    <div class="container-fluid" style="padding-left: 30%; padding-right: 30%">
-         <form th:action="@{/placeOrder}" th:object="${combinedModel}" method="post" id="combinedForm" class="main_form">
-            <div class="row">
-                <div class="col-sm h3title">
-                    <h2>Bestelldetails</h2>
-                </div>
+      <form th:action="@{/placeOrder}" th:object="${combinedModel}" method="post" id="combinedForm" class="main_form">
+         <div class="row">
+            <div class="col-sm h3title">
+               <h2>Bestelldetails</h2>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="Name" type="text" th:field="*{address.name}" required>
-                </div>
+         </div>
+         <div class="row">
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="Name" type="text" th:field="*{address.name}" required>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="Straße" type="text" th:field="*{address.street}" required>
-                </div>
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="Postleitzahl" type="text" th:field="*{address.postalCode}" required>
-                </div>
+         </div>
+         <div class="row">
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="Straße" type="text" th:field="*{address.street}" required>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="Stadt" type="text" th:field="*{address.city}" required>
-                </div>
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="US" type="text" th:field="*{address.country}" required>
-                </div>
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="Postleitzahl" type="text" th:field="*{address.postalCode}"
+                  required>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <textarea class="contactusmess" placeholder="Lieferinformationen" th:field="*{address.shippingInstructions}"></textarea>
-                </div>
+         </div>
+         <div class="row">
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="Stadt" type="text" th:field="*{address.city}" required>
             </div>
-    
-            <!-- Formular für Zahlungsinformationen -->
-             <div class="row">
-                 <div class="col-sm h3title">
-                     <h2>Kartendetails</h2>
-                 </div>
-             </div>
-            <div class="row">
-                <div class="col-sm ">
-                    <input class="contactusmess" placeholder="Name auf Karte" type="text" th:field="*{paymentMethod.cardHolderName}" required>
-                </div>
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="US" type="text" th:field="*{address.country}" required>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="Kartennummer" type="number" th:field="*{paymentMethod.cardNumber}" minlength="8" maxlength="20" required>
-                </div>
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="CVV" type="number" th:field="*{paymentMethod.cvv}" maxlength="3" required>
-                </div>
+         </div>
+         <div class="row">
+            <div class="col-sm">
+               <textarea class="contactusmess" placeholder="Lieferinformationen"
+                  th:field="*{address.shippingInstructions}"></textarea>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="Ablaufjahr" type="number" th:field="*{paymentMethod.expiryYear}" min="23" max="28" required>
-                </div>
-                <div class="col-sm">
-                    <input class="contactusmess" placeholder="Ablaufmonat" type="number" th:field="*{paymentMethod.expiryMonth}" min="1" max="12" required>
-                </div>
-            </div>
+         </div>
 
-             <div class="row" style="padding-left: 50px; Margin-top:50px">
-                 <div class="form-check">
-                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                     <label class="form-check-label" for="flexRadioDefault1">
-                         DHL Standard Lieferung + 4,99€
-                     </label>
-                 </div>
-             </div>
-             <div class="row" style="padding-left: 50px; margin-bottom: 50px;">
-                 <div class="form-check">
-                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                     <label class="form-check-label" for="flexRadioDefault2">
-                         Hermes Standard Lieferung + 5,99€
-                     </label>
-                 </div>
-             </div>
-
-            <div class="row" style="padding-left: 50px">
-               <p><input type="checkbox" required> &nbsp; Ich habe die <a th:href="@{/widerrufsbelehrung}">Widerrufsbelehrung</a> gelesen und akzeptiere diese</p>
+         <!-- Formular für Zahlungsinformationen -->
+         <div class="row">
+            <div class="col-sm h3title">
+               <h2>Kartendetails</h2>
             </div>
-            
-            <button class="send_btn" type="submit">Jetzt Zahlungspflichtig bestellen</button>
-        </form>
+         </div>
+         <div class="row">
+            <div class="col-sm ">
+               <input class="contactusmess" placeholder="Name auf Karte" type="text"
+                  th:field="*{paymentMethod.cardHolderName}" required>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="Kartennummer" type="number"
+                  th:field="*{paymentMethod.cardNumber}" minlength="8" maxlength="20" required>
+            </div>
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="CVV" type="number" th:field="*{paymentMethod.cvv}"
+                  maxlength="3" required>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="Ablaufjahr" type="number"
+                  th:field="*{paymentMethod.expiryYear}" min="23" max="28" required>
+            </div>
+            <div class="col-sm">
+               <input class="contactusmess" placeholder="Ablaufmonat" type="number"
+                  th:field="*{paymentMethod.expiryMonth}" min="1" max="12" required>
+            </div>
+         </div>
+
+         <div class="row" style="padding-left: 50px; Margin-top:50px">
+            <div class="form-check">
+               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+               <label class="form-check-label" for="flexRadioDefault1">
+                  DHL Standard Lieferung + 4,99€
+               </label>
+            </div>
+         </div>
+         <div class="row" style="padding-left: 50px; margin-bottom: 50px;">
+            <div class="form-check">
+               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+               <label class="form-check-label" for="flexRadioDefault2">
+                  Hermes Standard Lieferung + 5,99€
+               </label>
+            </div>
+         </div>
+
+         <div class="row" style="padding-left: 50px">
+            <p><input type="checkbox" required> &nbsp; Ich habe die <a
+                  th:href="@{/widerrufsbelehrung}">Widerrufsbelehrung</a> gelesen und akzeptiere diese</p>
+         </div>
+
+         <button class="send_btn" type="submit">Jetzt Zahlungspflichtig bestellen</button>
+      </form>
    </div>
 
 </body>
@@ -219,14 +221,14 @@
 <script src="js/custom.js"></script>
 
 <style>
-    .h3title{
-        color: #2a2a2c;
-        font-size: 26px;
-        line-height: 30px;
-        padding-top: 23px;
-        font-weight: 600;
-        margin-bottom: 30px;
-    }
+   .h3title {
+      color: #2a2a2c;
+      font-size: 26px;
+      line-height: 30px;
+      padding-top: 23px;
+      font-weight: 600;
+      margin-bottom: 30px;
+   }
 </style>
 
 </html>

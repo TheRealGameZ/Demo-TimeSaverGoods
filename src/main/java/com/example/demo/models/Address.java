@@ -2,12 +2,12 @@ package com.example.demo.models;
 
 public class Address 
 {
-    public String shippingInstructions;
-    public String name;
-    public String street;
-    public String country;
-    public String postalCode;
-    public String city;
+    private String shippingInstructions;
+    private String name;
+    private String street;
+    private String country;
+    private String postalCode;
+    private String city;
 
 
     public String getShippingInstructions() {
