@@ -112,6 +112,8 @@ public class SalesforceService
     //Get Access via SOAP
     public static void login()
     {
+
+        System.out.println("Token wird geholt");
         
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.TEXT_XML);
@@ -134,6 +136,8 @@ public class SalesforceService
                 Node node = sessionIdNode.item(0);
                 accessToken = node.getTextContent();
             }
+
+            System.out.println("Token ready: " + accessToken);
 
         } catch (Exception e) 
         {

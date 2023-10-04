@@ -35,12 +35,6 @@
             min-height: 100vh;
         }
 
-        .login-container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     </style>
 
    <header>
@@ -98,7 +92,6 @@
 
    <body class="main-layout">
 
-     <!-- banner -->
      <section class="banner_main">
        <div class="container">
            <div class="row">
@@ -108,28 +101,26 @@
            </div>
         </div>
      </section>
-     <!-- end banner -->
 
-     <!-- Content Container -->
      <div class="container-lg" style="width:50%; margin: 0 auto;">
         <div class="row">
            <div class="col-md-6 offset-md-3">
-              <form id="request" class="main_form">
+              <form id="request" class="main_form" method="post" th:action="@{/login}">
                  <div class="row">
                     <div class="col-md-12 text-center">
                        <h3>Login</h3>
                     </div>
                     <div class="col-md-12">
-                       <input class="contactus" placeholder="Username" type="type" name="Name"> 
+                       <input class="contactus" placeholder="Username" type="type" name="Name" required>
                     </div>
                     <div class="col-md-12">
-                       <input class="contactus" placeholder="Password" type="password" name="Password"> 
+                       <input class="contactus" placeholder="Password" type="password" name="Password" required>
                     </div>
                     <div class="col-md-12">
                        <button class="send_btn">Login</button> 
                     </div>
                     <div class="col-md-12 text-center">
-                         <a th:href="@{/register}"><p>Jetzt registrieren</p></a>
+                         <a th:href="@{/userProfile}"><p>Jetzt registrieren</p></a>
                      </div>
                  </div>
               </form>

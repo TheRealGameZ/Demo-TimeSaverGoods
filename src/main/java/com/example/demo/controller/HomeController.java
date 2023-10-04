@@ -101,6 +101,24 @@ public class HomeController
           return "about";
      }
 
+     @GetMapping("/aboVerwalten")
+      public String returnAboVerwalten()
+      {
+           return "aboVerwalten";
+      }
+
+     @PostMapping("/login")
+     public String returnUserPage()
+     {
+        return "redirect:/userProfile";
+     }
+
+     @GetMapping("/userProfile")
+      public String getUserPage()
+      {
+         return "userProfile";
+      }
+
 
      //----------------------------- CART -----------------------------//
 

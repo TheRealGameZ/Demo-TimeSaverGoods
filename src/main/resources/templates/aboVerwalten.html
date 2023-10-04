@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>TimeSaverGoods</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+
+<style>
+    /* Benutzerdefiniertes CSS, um den Body zu zentrieren */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+</style>
+
+<header>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" th:href="@{/}">Startseite</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" th:href="@{/products}">Produkte</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" th:href="@{/about}">Über Uns</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" th:href="@{/impressum}">Impressum</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" th:href="@{/datenschutz}">Datenschutz</a>
+                                </li>
+                                <li class="nav-item d_none sea_icon">
+                                    <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="nav-item d_none">
+                                    <a class="nav-link" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                                </li>
+                                <li class="nav-item d_none">
+                                    <a class="nav-link" th:href="@{/cart}"><img src="images/cart.svg"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    .menueItem{
+        height: 50px;
+        margin-bottom: 30px;
+        border: 0 solid cornflowerblue;
+        font-size: 30px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .menueItem:hover{
+        border-left-width: 2px;
+    }
+
+    .menueItemActive{
+        background: rgba(253, 247, 247, 0.20);
+        border-left-width: 2px;
+    }
+
+    h2 {
+        color: #100d0d;
+        line-height: 20px;
+        font-size: 28px;
+    }
+
+    h3 {
+        color: rgb(128, 124, 124);
+        line-height: 20px;
+        font-size: 25px;
+    }
+
+    .form-check label {
+        font-size: 18px;
+    }
+
+    .form-check{
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+</style>
+
+<body class="main-layout">
+
+<section class="banner_main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Hier muss noch was hin</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container-fluid" style="margin-top: 50px; margin-bottom: 50px">
+    <div class="row">
+        <div class="col">
+            <div class="container-fluid">
+                <div class="row menueItem">
+                    <p>Account</p>
+                </div>
+                <div class="row menueItem menueItemActive">
+                    <p>Abo verwaltung</p>
+                </div>
+                <div class="row menueItem">
+                    <a th:href="@{/userProfile}">
+                    <p>Bestellhistorie</p>
+                    </a>
+                </div>
+                <div class="row menueItem">
+                    <p>Einstellungen</p>
+                </div>
+                <div class="row menueItem">
+                    <p>Support</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <h2>Hier können Sie ihr Abo verwalten</h2><br><br>
+            <div class="row">
+                <div class="col">
+                    <h3>Bestellzyklus</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Alle 5 Monate
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Alle 3 Monate
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                        <label class="form-check-label" for="flexRadioDefault3">
+                            Alle 2 Monate
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                        <label class="form-check-label" for="flexRadioDefault4">
+                            Jeden Monat
+                        </label>
+                    </div>
+                    <button class="btn read_more" style="width: 80%">Abo kündigen</button>
+                </div>
+                <div class="col">
+                    <h3>Produkte</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Gilette Venus Skin Cushion Smooth Rasierklingen
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Rituals THE RITUAL OF SAKURA Anti-perspirant Spray
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked>
+                        <label class="form-check-label" for="flexCheckChecked2">
+                            CeraVe Schäumendes Reinigungsgel
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3" checked>
+                        <label class="form-check-label" for="flexCheckChecked3">
+                            Paradontax extra frisch Zahnpasta
+                        </label>
+                    </div>
+                    <button class="btn read_more" style="width: 80%">Neue Bestellung aufgeben</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+
+<footer class="mt-auto">
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <ul class="location_icon">
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br>Gera</li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> support@timesavergoods.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>© 2023 Alle Rechte vorbehalten. Design by TimeSaverGoods</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+</html>
+
