@@ -85,37 +85,4 @@ public class ProductRequestService
         }
     }
 
-    /* private static Map<String, String> checkImages(Map<String, String> urls){
-        String path = "src/main/resources/static/images/";
-        List<String> downloadableImages = new ArrayList<>();
-        Map<String, String> returnUrls = new HashMap<>();
-
-        for(String url : urls.keySet()){
-            File image = new File(path + urls.get(url).substring(0, 5) + ".png");
-            
-            if(!image.exists()){
-                downloadableImages.add(url);
-            }
-        }
-
-        for(String url: downloadableImages){
-            HttpClient httpClient = HttpClients.createDefault();
-            HttpGet httpGet = new HttpGet(url);
-
-            try {
-                HttpResponse response = httpClient.execute(httpGet);
-                byte[] imageBytes = EntityUtils.toByteArray(response.getEntity());
-
-                Path filePath = Paths.get("src/main/resources/static/images/", urls.get(url).substring(0, 5) + ".png");
-
-                Files.write(filePath, imageBytes);
-
-                returnUrls.put(urls.get(url), "images/" + urls.get(url).substring(0, 5) + ".png");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        
-        return returnUrls;
-    } */
 }

@@ -9,7 +9,7 @@ public class Cart
 
     public class CartItems 
     {
-        public CartItem cartItem;
+        private CartItem cartItem;
 
         public CartItem getCartItem() 
         {

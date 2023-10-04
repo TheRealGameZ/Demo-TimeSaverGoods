@@ -1,196 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>TimeSaverGoods</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   </head>
 
-   <style>
-      /* Benutzerdefiniertes CSS, um den Body zu zentrieren */
-      body {
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-      }
-  </style>
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>TimeSaverGoods</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen">
+</head>
 
-   <header>
-      <!-- header inner -->
-      <div class="header">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                  <div class="full">
-                     <div class="center-desk">
-                        <div class="logo">
-                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
-                        </div>
+<style>
+   /* Benutzerdefiniertes CSS, um den Body zu zentrieren */
+   body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+   }
+
+   .row {
+      margin-top: 50px;
+      margin-bottom: 100px;
+   }
+
+   .imageRound {
+      border-radius: 15px;
+      height: 100%;
+   }
+
+   .col{
+      padding: 50px;
+      text-align: center;
+   }
+
+   h2 {
+      text-decoration: solid;
+      font-weight: bold;
+   }
+</style>
+
+<header>
+   <!-- header inner -->
+   <div class="header">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+               <div class="full">
+                  <div class="center-desk">
+                     <div class="logo">
+                        <a href="index.html"><img src="images/logo.png" alt="#" /></a>
                      </div>
                   </div>
                </div>
-               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+               <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                     aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
-                     </button>
-                     <div class="collapse navbar-collapse" id="navbarsExample04">
-                        <ul class="navbar-nav mr-auto">
-                           <li class="nav-item">
-                              <a class="nav-link" th:href="@{/}">Startseite</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" th:href="@{/products}">Unsere Produkte</a>
-                           </li>
-                           <li class="nav-item active">
-                              <a class="nav-link" th:href="@{/about}">Über Uns</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" th:href="@{/impressum}">Impressum</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" th:href="@{/datenschutz}">Datenschutz</a>
-                           </li>
-                           <li class="nav-item d_none sea_icon">
-                              <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
-                           </li>
-                           <li class="nav-item d_none login_btn">
-                              <a class="nav-link" th:href="@{/login}">Login</a>
-                           </li>
-                           <li class="nav-item d_none">
-                              <a class="nav-link" th:href="@{/cart}"><img src="images/cart.svg"></a>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarsExample04">
+                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                           <a class="nav-link" th:href="@{/}">Startseite</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" th:href="@{/products}">Unsere Produkte</a>
+                        </li>
+                        <li class="nav-item active">
+                           <a class="nav-link" th:href="@{/about}">Über Uns</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" th:href="@{/impressum}">Impressum</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" th:href="@{/datenschutz}">Datenschutz</a>
+                        </li>
+                        <li class="nav-item d_none sea_icon">
+                           <a class="nav-link" href="#"><i
+                                 class="fa fa-search" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item d_none login_btn">
+                           <a class="nav-link" th:href="@{/login}">Login</a>
+                        </li>
+                        <li class="nav-item d_none">
+                           <a class="nav-link" th:href="@{/cart}"><img src="images/cart.svg"></a>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
             </div>
          </div>
       </div>
-   </header>
+   </div>
+</header>
 
-   <body class="main-layout">
-      <section class="banner_main">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <p>Deine Schönheit, deine Zeit - TimeSaverGoods macht es möglich</p>
-               </div>
-            </div>
+<body class="main-layout">
+   <section class="banner_main">
+   </section>
+
+   <div class="container">
+      <div class="row">
+         <div class="col">
+            <h2>Über Uns</h2>
+            <p>
+               Timersvergoods ist eine führende GmbH im Bereich der Kosmetik und Schönheitspflege. Mit jahrelanger Erfahrung
+               und einem leidenschaftlichen
+               Engagement für Qualität haben wir es uns zur Aufgabe gemacht, unseren Kunden die besten Produkte für ihre
+               Hautpflege- und
+               Schönheitsbedürfnisse anzubieten.
+            </p>
          </div>
-      </section>
-
-      <div class="container">
-         <h1>Über Uns</h1> 
-
-</br> 
-
-<p> 
-
-Timersvergoods ist eine führende GmbH im Bereich der Kosmetik und Schönheitspflege. Mit jahrelanger Erfahrung und einem leidenschaftlichen 
-Engagement für Qualität haben wir es uns zur Aufgabe gemacht, unseren Kunden die besten Produkte für ihre Hautpflege- und 
-Schönheitsbedürfnisse anzubieten. 
-
-</p> 
-
-</br> 
-
-<h1>Unsere Philosophie:</h1> 
-
-</br> 
-
-<p> 
-
-Unsere Leidenschaft für Schönheit und Wohlbefinden spiegelt sich in jedem Aspekt unseres Unternehmens wider. Wir glauben fest daran,
-dass Schönheit von innen kommt und dass die richtigen Produkte einen entscheidenden Beitrag dazu leisten können, Ihr Selbstbewusstsein 
-zu stärken und Ihre natürliche Ausstrahlung hervorzuheben. 
-
-</p> 
-
-</br> 
-
-<h1>Unsere Produkte:</h1> 
-
-</br> 
-
-<p> 
-
-Bei Timersvergoods legen wir größten Wert auf Qualität und Wirksamkeit. Daher bieten wir sorgfältig ausgewählte Kosmetikprodukte an, die speziell entwickelt wurden,
-um die Bedürfnisse Ihrer Haut zu erfüllen. Unsere Produktpalette umfasst eine breite Palette von Hautpflegeprodukten, Make-up, Düften und vieles mehr.
-Egal, ob Sie nach Anti-Aging-Lösungen, natürlichen Inhaltsstoffen oder veganen Optionen suchen, bei uns werden Sie fündig. 
-
-</p> 
-
-</br> 
-
-<h1>Warum Timersvergoods wählen?</h1> 
-
-</br> 
-
-<p> 
-
-Qualitätsversprechen: Wir führen nur Produkte von renommierten Marken und stellen sicher, dass sie unseren strengen Qualitätsstandards entsprechen. 
-Expertenberatung: Unser Team von Schönheitsexperten steht Ihnen zur Verfügung, um Ihnen bei der Auswahl der richtigen Produkte für Ihre individuellen Bedürfnisse zu helfen. 
-Kundenzufriedenheit: Die Zufriedenheit unserer Kunden hat für uns oberste Priorität. Wir sind stolz auf unseren erstklassigen Kundenservice und die positive Erfahrung, die wir bieten. 
-Nachhaltigkeit: Timersvergoods ist bestrebt, nachhaltige und umweltfreundliche Praktiken zu fördern. Wir setzen uns für den Schutz unserer Umwelt ein. 
-Vielen Dank, dass Sie Timersvergoods vertrauen. Wir freuen uns darauf, Sie bei Ihrer Reise zu einem gesünderen und schöneren Selbst zu unterstützen.
-Entdecken Sie unsere Produkte und erleben Sie die Magie der Schönheit mit Timersvergoods! 
-</br> </br> 
-</p> 
+         <div class="col-5">
+            <image class="imageRound" src="images/home2.jpg"></image>
+         </div>
       </div>
+      <div class="row">
+         <div class="col-5">
+            <image class="imageRound" src="images/home2.jpg"></image>
+         </div>
+         <div class="col">
+            <h2>Unsere Produkte</h2>
+            <p>
+               Bei Timersvergoods legen wir größten Wert auf Qualität und Wirksamkeit. Daher bieten wir sorgfältig ausgewählte
+               Kosmetikprodukte an, die speziell entwickelt wurden,
+               um die Bedürfnisse Ihrer Haut zu erfüllen. Unsere Produktpalette umfasst eine breite Palette von
+               Hautpflegeprodukten, Make-up, Düften und vieles mehr.
+               Egal, ob Sie nach Anti-Aging-Lösungen, natürlichen Inhaltsstoffen oder veganen Optionen suchen, bei uns werden
+               Sie fündig.
+            </p>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col">
+            <h2>Unsere Philosophie</h2>
+            <p>
+               Unsere Leidenschaft für Schönheit und Wohlbefinden spiegelt sich in jedem Aspekt unseres Unternehmens wider.
+               Wir glauben fest daran,
+               dass Schönheit von innen kommt und dass die richtigen Produkte einen entscheidenden Beitrag dazu leisten
+               können, Ihr Selbstbewusstsein
+               zu stärken und Ihre natürliche Ausstrahlung hervorzuheben.
+            </p>
+         </div>
+         <div class="col-5">
+            <image class="imageRound" src="images/home2.jpg"></image>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-5">
+            <image class="imageRound" src="images/home2.jpg"></image>
+         </div>
+         <div class="col">
+            <h2>Warum Timersvergoods wählen?</h2>
+            <p>
+               Wir führen nur Produkte von renommierten Marken und stellen sicher, dass sie unseren
+               strengen Qualitätsstandards entsprechen.Unser Team von Schönheitsexperten steht Ihnen zur Verfügung, um Ihnen bei der Auswahl der
+               richtigen Produkte für Ihre individuellen Bedürfnisse zu helfen.Die Zufriedenheit unserer Kunden hat für uns oberste Priorität. Wir sind stolz auf unseren
+               erstklassigen Kundenservice und die positive Erfahrung, die wir bieten.
+            </p>
+         </div>
+      </div>
+   </div>
+</body>
 
-   </body>
-
-   <footer>
-      <div class="footer">
+<footer>
+   <div class="footer">
       <div class="container">
          <div class="row">
-               <div class="col-md-8 offset-md-2">
-                  <ul class="location_icon">
+            <div class="col-md-8 offset-md-2">
+               <ul class="location_icon">
                   <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Gera</li>
                   <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +49 0000 00000</li>
-                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br>support@timesavergoods.com</li>
-                  </ul>
-               </div>
+                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br>support@timesavergoods.com
+                  </li>
+               </ul>
+            </div>
          </div>
       </div>
       <div class="copyright">
          <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
+            <div class="row">
+               <div class="col-md-12">
                   <p>© 2023 Alle rechte Vorbehalten. Design by TimeSaverGoods</a></p>
-                  </div>
                </div>
+            </div>
          </div>
       </div>
-      </div>
-   </footer>
+   </div>
+</footer>
 
-   <script src="js/jquery.min.js"></script>
-   <script src="js/popper.min.js"></script>
-   <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="js/jquery-3.0.0.min.js"></script>
-   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="js/custom.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+
 </html>
