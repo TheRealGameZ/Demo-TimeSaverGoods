@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.service.ProductRequestService;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -56,6 +58,21 @@ public class HomeController {
      @GetMapping("/widerrufsbelehrung")
      public String viewWiederruf() {
           return "widerrufsbelehrung";
+     }
+
+     @PostMapping("/login")
+     public String returnuserProfile() {
+          return "userProfile";
+     }
+
+     @GetMapping("/userProfile")
+     public String returnUpfo() {
+          return "userProfile";
+     }
+
+     @GetMapping("/aboVerwalten")
+     public String returnAboVerwalten() {
+          return "aboVerwalten";
      }
 
 }

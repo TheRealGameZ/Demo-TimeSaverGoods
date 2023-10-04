@@ -104,10 +104,11 @@
 
    <section class="banner_main">
    </section>
+   
    <div class="container-lg" style="width:50%; margin: 0 auto;">
       <div class="row">
          <div class="col-md-6 offset-md-3">
-            <form id="request" class="main_form">
+            <form id="request" class="main_form" method="post" th:action="@{/login}">
                <div class="row">
                   <div class="col-md-12 text-center">
                      <h3>Login</h3>
