@@ -323,7 +323,7 @@ button {
 .banner_main {
      background: #f5f6f6;
      padding: 198px 0px 90px 0px;
-     background-image: url("../images/headerBg.jpg");
+     background-image: url("/images/headerBg.jpg");
 }
 
 .text-bg {
