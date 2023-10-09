@@ -4,8 +4,8 @@ public class ProductData {
     
     public DefaultImage defaultImage;
     public Fields fields;
-    private String id;
-    private String unitPrice;
+    public String id;
+    public String unitPrice;
 
     public String getUnitPrice() {
         return this.unitPrice;
@@ -29,8 +29,8 @@ public class ProductData {
     }
 
     public class Fields {
-        private String Description;
-        private String Name;
+        public String Description;
+        public String Name;
 
         public String getdescription() {
         return this.Description;

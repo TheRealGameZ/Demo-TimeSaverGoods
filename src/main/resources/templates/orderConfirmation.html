@@ -46,7 +46,7 @@
                <div class="full">
                   <div class="center-desk">
                      <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        <a th:href="@{/}"><img src="images/logo.png" alt="#" /></a>
                      </div>
                   </div>
                </div>
@@ -92,12 +92,13 @@
    <section class="banner_main">
    </section>
 
+   <br><br><br><br><br><br><br><br>
+
    <div class="container-fluid">
-      <div class="row ">
-         <div class="col text-center">
+      <div style="display: flex; align-items:center; justify-content:center;height: 500px;">
+         <div style="height: 500px; text-align:center;">
             <h1>Vielen Dank für deine <br>Bestellung!</h1>
-            <h2>Deine Bestellnummer:<h4 th:text="${OrderNumber}">
-                  </4>
+            <h2>Deine Bestellnummer:<h4 th:text="${OrderNumber}"></h4>
             </h2>
             <button class="read_more"><a th:href="@{/}"> Zur Startseite</a></button>
          </div>

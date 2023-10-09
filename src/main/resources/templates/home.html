@@ -61,7 +61,7 @@
                <div class="full">
                   <div class="center-desk">
                      <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        <a th:href="@{/}"><img src="images/logo.png" alt="#" /></a>
                      </div>
                   </div>
                </div>
@@ -131,7 +131,7 @@
                      <div class="text-bg">
                         <h1> <span class="blu">Deine Schöhnheit, deine Zeit- TimeSaverGoods macht es möglich</h1>
                         <figure><img src="images/home1.jpg" alt="#" /></figure>
-                        <a class="read_more" href="products.html">Jetzt einkaufen</a>
+                        <a class="read_more" th:href="@{/products}">Jetzt einkaufen</a>
                      </div>
                   </div>
                </div>
@@ -142,7 +142,7 @@
                      <div class="text-bg">
                         <h1> <span class="blu">Schönheit bis zur Haustür geliefert</h1>
                         <figure><img src="images/home3.jpg" alt="#" /></figure>
-                        <a class="read_more" href="products.html">Jetzt einkaufen</a>
+                        <a class="read_more" th:href="@{/products}">Jetzt einkaufen</a>
                      </div>
                   </div>
                </div>
@@ -333,16 +333,20 @@
                <h3>Kontaktieren Sie uns!</h3>
             </div>
             <div class="col-md-12 ">
-               <input class="contactus" placeholder="Name" type="type" name="Name">
+               <input class="contactus" placeholder="Name" type="type" name="Name" required>
             </div>
             <div class="col-md-12">
-               <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number">
+               <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number"required>
             </div>
             <div class="col-md-12">
-               <input class="contactus" placeholder="Email" type="type" name="Email">
+               <input class="contactus" placeholder="Email" type="type" name="Email"required>
             </div>
             <div class="col-md-12">
-               <input class="contactusmess" placeholder="Nachricht" type="type" Message="Name">
+               <input class="contactusmess" placeholder="Nachricht" type="type" Message="Name"required>
+            </div>
+            <div class="col-md-12" style="padding-left: 50px">
+               <p><input type="checkbox" required> &nbsp; Ich habe die <a
+                     th:href="@{/widerrufsbelehrung}">Datenschutzerklärung</a> gelesen</p>
             </div>
             <div class="col-md-12">
                <button class="send_btn">Abschicken</button>
