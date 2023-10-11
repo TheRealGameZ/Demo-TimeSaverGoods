@@ -30,17 +30,11 @@
 </head>
 
 <style>
+   /* Benutzerdefiniertes CSS, um den Body zu zentrieren */
    body {
       display: flex;
       flex-direction: column;
-      min-height: 120vh;
-   }
-
-   body .container .row {
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 100vh;
    }
 </style>
 
@@ -66,7 +60,7 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarsExample04">
                      <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                            <a class="nav-link" th:href="@{/}">Startseite</a>
                         </li>
                         <li class="nav-item">
@@ -76,8 +70,7 @@
                            <a class="nav-link" th:href="@{/about}">Über Uns</a>
                         </li>
                         <li class="nav-item d_none sea_icon">
-                           <a class="nav-link" href="#"><i
-                                 class="fa fa-search" aria-hidden="true"></i></a>
+                           <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                         </li>
                         <li class="nav-item d_none login_btn">
                            <a class="nav-link" th:href="@{/login}">Login</a>
@@ -95,128 +88,256 @@
 </header>
 
 <body class="main-layout">
-
    <section class="banner_main">
    </section>
 
-   <div class="container" style="margin: 0 50px;">
-      <div class="row ">
-         <h3>Widerrufsbelehrung</h3>
+   <div class="container-fluid" style="margin-top: 50px; margin-bottom:50px">
+      <div class="row">
+         <div class="col"></div>
+         <div class="col-6">
+            ****************************************************************************************************
 
-         </br>
-         <p>Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder
-            ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können.</p></br></br>
+            <br />
 
-         <p>
-         <h3>Widerrufsrecht</h3>
-         </p></br></br>
+            <p style="font-weight: bold; padding-bottom: 10px;">Widerrufsrecht des Kunden als Verbraucher:
 
-         <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die
-            Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht
-            der
-            Beförderer ist, die erste Ware in Besitz genommen haben bzw. hat. Um Ihr Widerrufsrecht auszuüben, müssen
-            Sie
-            uns (Firma TSG GmbH, Weg der Freundschaft 4, D-07546 Gera, Telefonnummer: 015723228432, E-Mail-Adresse:
-            support@tsg.com) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder eine
-            E-Mail)
-            über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte
-            Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist
-            reicht
-            es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist
-            absenden.
-         </p></br></br>
+            </p>
 
-         <p>
-         <h3>Folgen des Widerrufs</h3>
-         </p></br></br>
 
-         <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben,
-            einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie
-            eine
-            andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben),
-            unverzüglich
-            und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf
-            dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das
-            Sie
-            bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes
-            vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. Wir können die
-            Rückzahlung
-            verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, dass Sie
-            die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist. Sie haben die Waren
-            unverzüglich
-            und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses
-            Vertrags
-            unterrichten, an uns zurückzusenden oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf
-            der
-            Frist von vierzehn Tagen absenden. Wir tragen die Kosten der Rücksendung der Waren. Sie müssen für einen
-            etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen zur Prüfung der
-            Beschaffenheit,
-            Eigenschaften und Funktionsweise der Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist.</p>
 
-         <p>
-         <h3>Ausschluss bzw. vorzeitiges Erlöschen des Widerrufsrechts</h3></br></br>Das Widerrufsrecht besteht
-         nicht bei Verträgen</p></br></br>
 
-         <ul>
 
-            <li> zur Lieferung von Waren, die nicht vorgefertigt sind und für deren Herstellung eine individuelle
-               Auswahl
-               oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse
-               des
-               Verbrauchers zugeschnitten sind;</li>
+            <b> Widerrufsrecht für Verbraucher</b><br />
 
-            <li> zur Lieferung von Waren, die schnell verderben können oder deren Verfallsdatum schnell überschritten
-               würde;</li>
+            <br />
 
-            <li> zur Lieferung alkoholischer Getränke, deren Preis bei Vertragsschluss vereinbart wurde, die aber
-               frühestens 30 Tage nach Vertragsschluss geliefert werden können und deren aktueller Wert von Schwankungen
-               auf dem Markt abhängt, auf die der Unternehmer keinen Einfluss hat;</li>
+            Verbrauchern steht ein Widerrufsrecht nach folgender Maßgabe zu, wobei Verbraucher jede natürliche Person
+            ist, die
+            ein Rechtsgeschäft zu Zwecken abschließt,
 
-            <li> zur Lieferung von Zeitungen, Zeitschriften oder Illustrierten mit Ausnahme von Abonnement-Verträgen.
-            </li>
-         </ul>
+            die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden
+            können:
 
-         <p>Das Widerrufsrecht erlischt vorzeitig bei Verträgen</p></br></br>
 
-         <ul>
 
-            <li>zur Lieferung versiegelter Waren, die aus Gründen des Gesundheitsschutzes oder der Hygiene nicht zur
-               Rückgabe geeignet sind, wenn ihre Versiegelung nach der Lieferung entfernt wurde;</li>
+            <br />
 
-            <li>zur Lieferung von Waren, wenn diese nach der Lieferung auf Grund ihrer Beschaffenheit untrennbar mit
-               anderen Gütern vermischt wurden;</li>
+            <br />
 
-            <li> zur Lieferung von Ton- oder Videoaufnahmen oder Computersoftware in einer versiegelten Packung, wenn
-               die
-               Versiegelung nach der Lieferung entfernt wurde.</li>
 
-         </ul>
-         <br> <br>
 
-         <h3>Muster- Widerrufsformular</h3><br>
+            <p style="font-weight: bold; padding-bottom: 1px; text-align: center;">Widerrufsbelehrung</p>
 
-         <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es
-            zurück.)
-         </p>An<br>Firma<br> TSG GmbH<br>Weg der Freundschaft 4<br>07546 Gera<br><br>E-Mail-Adresse:
-         support@tsg.com<br><br>
+            <br />
 
-         - Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden
-         Waren
-         (*) - Bestellt am (*)/erhalten am (*)
+            <b>Widerrufsrecht</b><br />
 
-         - Name des/der Verbraucher(s)
+            <br />
 
-         - Anschrift des/der Verbraucher(s)
+            Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
 
-         - Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)
+            <br />
 
-         - Datum --------------------------------------- (*) Unzutreffendes streichen.
+            <br />
 
-         <p>Quelle: <a href="https://www.ra-plutte.de/" target="_blank" alt="Widerrufsbelehrung Generator">Kanzlei
-               Plutte</a></p>
+            Die Widerrufsfrist beträgt vierzehn Tage, ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter,
+
+            der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.
+
+
+
+            <br /><br />
+
+            Um Ihr Widerrufsrecht auszuüben, müssen Sie uns<br />
+
+            <div style="margin-left:20px; margin-top: 5px; margin-bottom:5px;">
+
+               TSG GmbH<br />
+
+               Otto Barchmann, Andreas Richter, John Berger, Nick Wedemann<br />
+
+               Weg der Freundschaft 4<br />
+
+               D-07546 Gera<br />
+
+               E-Mail support@tsg.com<br />
+
+            </div>
+
+            mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren
+            Entschluss,
+
+            diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular
+            verwenden, das
+            jedoch nicht vorgeschrieben ist.
+
+            <br />
+
+            <br />
+
+
+
+            <b>Widerrufsfolgen</b>
+
+            <br /><br />
+
+            Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben,
+            einschließlich der
+
+            Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der
+            Lieferung als
+
+            die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen
+            vierzehn
+            Tagen
+
+            ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen
+            ist.
+
+            Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion
+            eingesetzt
+            haben,
+
+            es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser
+            Rückzahlung Entgelte berechnet.
+
+            <br />
+
+            <br />
+
+
+
+            Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den
+            Nachweis
+            erbracht haben,
+
+            dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.
+
+            <br />
+
+            <br />
+
+
+
+            Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie
+            uns
+            über den
+
+            Widerruf dieses Vertrages unterrichten, an uns zurückzusenden oder zu übergeben. Die Frist ist gewahrt,
+
+            wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen absenden.
+
+            <br />
+
+            <br />
+
+
+
+            Wir tragen die Kosten der Rücksendung der Waren<br />
+
+            <br />
+
+
+
+            <b>Ende der Widerrufsbelehrung</b>
+
+            <br />
+
+            <br />
+
+            ****************************************************************************************************
+
+
+            <br />
+
+
+
+            <p style="font-weight: bold; padding-bottom: 10px;">Widerrufsformular</p>
+
+
+
+            <p style="text-align: center; font-weight: bold;">Muster-Widerrufsformular</p>
+
+            (Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es
+            zurück.)<br />
+
+            <div style="border: 1px solid #000000;padding: 10px;">
+
+               An :<br />
+
+               TSG GmbH<br />
+
+               Otto Barchmann, Andreas Richter, John Berger, Nick Wedemann<br />
+
+               Weg der Freundschaft 4<br />
+
+               D-07546 Gera<br />
+
+               E-Mail support@tsg.com<br />
+
+               <br />
+
+
+
+               Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden
+               Waren
+               (*)/die Erbringung der folgenden Dienstleistung (*)<br />
+
+               <br />
+
+               _____________________________________________________<br />
+
+               <br />
+
+               Bestellt am (*)/erhalten am (*)<br />
+
+               <br />
+
+               __________________<br />
+
+               <br />
+
+               Name des/der Verbraucher(s)<br />
+
+               <br />
+
+               _____________________________________________________<br />
+
+               <br />
+
+               Anschrift des/der Verbraucher(s)<br />
+
+               <br />
+
+               <br />
+
+               _____________________________________________________<br />
+
+               <br />
+
+               Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)<br />
+
+               <br />
+
+               __________________<br />
+
+               <br />
+
+               Datum<br />
+
+               <br />
+
+               __________________<br />
+
+               <br />
+
+            </div>
+
+            (*) Unzutreffendes streichen.<br />
+
+         </div>
+         <div class="col"></div>
       </div>
-   </div>
-
 </body>
 
 <footer class="mt-auto">
@@ -253,6 +374,7 @@
       </div>
    </div>
 </footer>
+
 
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
