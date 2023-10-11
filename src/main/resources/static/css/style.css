@@ -321,9 +321,10 @@ button {
 /** banner section **/
 
 .banner_main {
-     background: #f5f6f6;
+     background: #b9cbcf;
      padding: 198px 0px 90px 0px;
      background-image: url("/images/headerBg.jpg");
+     background-blend-mode: overlay
 }
 
 .text-bg {
